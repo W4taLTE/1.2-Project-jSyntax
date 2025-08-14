@@ -21,7 +21,7 @@ SyntaxJavaScript/
 - Bisa dikembangkan sesuai kebutuhan
 
 ## 🔍 Preview Code
-https://w4talte.github.io/1.2-Project-hSyntax/
+https://w4talte.github.io/1.2-Project-3-Syntax/
 
 ✍️ Dibuat oleh: [Wahyu Taufik Hidayat]  
 📅 Tahun: 2025
