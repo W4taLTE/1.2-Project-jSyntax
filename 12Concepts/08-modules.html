@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Modules</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 JavaScript Modules</h1>
+    <p>Panduan lengkap modul JavaScript untuk pengembangan aplikasi modern</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Modul JavaScript</h4>
+        <p>Modul adalah cara untuk memecah kode menjadi file terpisah yang dapat diimpor dan diekspor. Ini membantu dalam mengorganisir kode dan menghindari polusi namespace global.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>math-module.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Ekspor tunggal (default export)</span><br>
+            <span class="keyword">const</span> <span class="function">add</span> = (a, b) => a + b;<br>
+            <span class="keyword">export default</span> add;<br><br>
+            
+            <span class="comment">// Ekspor bernama (named export)</span><br>
+            <span class="keyword">export const</span> subtract = (a, b) => a - b;<br>
+            <span class="keyword">export const</span> multiply = (a, b) => a * b;<br>
+            <span class="keyword">export const</span> divide = (a, b) => a / b;
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>export default</code> - <span class="highlight">Ekspor utama dari modul</span><br>
+          • <code>export</code> - <strong>Ekspor bernama (bisa banyak per modul)</strong><br>
+          • <code>import</code> - <strong>Untuk mengimpor fungsi/variabel dari modul lain</strong><br>
+          • <code>type="module"</code> - <strong>Atribut script untuk menggunakan modul</strong><br>
+          • File modul memiliki <strong>scope sendiri</strong> (variabel tidak global)
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>app.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Impor default export</span><br>
+            <span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">'./math-module.js'</span>;<br><br>
+            
+            <span class="comment">// Impor named exports</span><br>
+            <span class="keyword">import</span> { subtract, multiply } <span class="keyword">from</span> <span class="string">'./math-module.js'</span>;<br><br>
+            
+            <span class="comment">// Impor semua named exports sebagai namespace</span><br>
+            <span class="keyword">import</span> * <span class="keyword">as</span> math <span class="keyword">from</span> <span class="string">'./math-module.js'</span>;<br><br>
+            
+            <span class="comment">// Impor dengan alias</span><br>
+            <span class="keyword">import</span> { divide <span class="keyword">as</span> div } <span class="keyword">from</span> <span class="string">'./math-module.js'</span>;<br><br>
+            
+            <span class="function">console</span>.<span class="function">log</span>(<span class="function">add</span>(2, 3)); <span class="comment">// 5</span><br>
+            <span class="function">console</span>.<span class="function">log</span>(<span class="function">math</span>.<span class="function">multiply</span>(2, 3)); <span class="comment">// 6</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Keuntungan Modul</h4>
+        <p>Modul membantu dalam: maintainability kode, menghindari naming collisions, lazy loading, dan dependency management yang lebih baik.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>module-syntax.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Ekspor</span><br>
+            <span class="keyword">export default</span> <span class="keyword">function</span> <span class="function">foo</span>() {} <span class="comment">// Default export</span><br>
+            <span class="keyword">export const</span> bar = 42; <span class="comment">// Named export</span><br>
+            <span class="keyword">export</span> { bar, baz }; <span class="comment">// Ekspor multiple</span><br>
+            <span class="keyword">export</span> { bar <span class="keyword">as</span> myBar }; <span class="comment">// Ekspor dengan alias</span><br><br>
+            
+            <span class="comment">// Impor</span><br>
+            <span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">'module'</span>; <span class="comment">// Impor default</span><br>
+            <span class="keyword">import</span> { bar } <span class="keyword">from</span> <span class="string">'module'</span>; <span class="comment">// Impor named</span><br>
+            <span class="keyword">import</span> { bar <span class="keyword">as</span> myBar } <span class="keyword">from</span> <span class="string">'module'</span>; <span class="comment">// Impor dengan alias</span><br>
+            <span class="keyword">import</span> * <span class="keyword">as</span> module <span class="keyword">from</span> <span class="string">'module'</span>; <span class="comment">// Impor semua</span><br>
+            <span class="keyword">import</span> <span class="string">'module'</span>; <span class="comment">// Impor untuk side effects saja</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Default export</strong> - Hanya satu per modul, bisa berupa fungsi/class/variabel<br>
+          • <strong>Named exports</strong> - Bisa banyak, harus menggunakan kurung kurawal saat impor<br>
+          • <strong>Alias</strong> - Berguna ketika ada konflik nama atau ingin memberi nama berbeda<br>
+          • <span class="highlight">Impor semua</span> sebagai namespace berguna saat banyak ekspor dari modul<br>
+          • <strong>Side effects</strong> - Modul dijalankan sekali saat pertama kali diimpor
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>dynamic-modules.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Dynamic Imports (lazy loading)</span><br>
+            <span class="keyword">const</span> loadModule = <span class="keyword">async</span> () => {<br>
+            &nbsp;&nbsp;<span class="keyword">const</span> module = <span class="keyword">await</span> <span class="function">import</span>(<span class="string">'./math-module.js'</span>);<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(module.<span class="function">add</span>(2, 3));<br>
+            };<br><br>
+            
+            <span class="comment">// Re-export (aggregating modules)</span><br>
+            <span class="keyword">export</span> { add, subtract } <span class="keyword">from</span> <span class="string">'./math-module.js'</span>;<br>
+            <span class="keyword">export</span> { default <span class="keyword">as</span> Calculator } <span class="keyword">from</span> <span class="string">'./calc-module.js'</span>;<br><br>
+            
+            <span class="comment">// Worker Modules</span><br>
+            <span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="class">Worker</span>(<span class="string">'./worker.js'</span>, {<br>
+            &nbsp;&nbsp;type: <span class="string">'module'</span><br>
+            });
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Fitur Lanjutan Modul</h4>
+        <p>Dynamic imports memungkinkan lazy loading modul. Re-export berguna untuk membuat modul aggregator. Worker modules memungkinkan penggunaan modul di web workers.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices Modul</h4>
+        <p>Gunakan default export untuk ekspor utama modul, kelompokkan modul terkait, dan gunakan dynamic imports untuk optimasi performa.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>module-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Struktur modul yang jelas</span><br>
+            <span class="comment">// math.js</span><br>
+            <span class="keyword">export const</span> add = (a, b) => a + b;<br>
+            <span class="keyword">export const</span> subtract = (a, b) => a - b;<br>
+            <span class="keyword">export default</span> { add, subtract }; <span class="comment">// Ekspor objek sebagai default</span><br><br>
+            
+            <span class="comment">// ❌ Avoid - Terlalu banyak default export</span><br>
+            <span class="keyword">export default</span> <span class="keyword">function</span> <span class="function">add</span>() {}<br>
+            <span class="keyword">export default</span> <span class="keyword">function</span> <span class="function">subtract</span>() {} <span class="comment">// Error!</span><br><br>
+            
+            <span class="comment">// ✅ Better - Dynamic import untuk code splitting</span><br>
+            <span class="keyword">const</span> loadFeature = <span class="keyword">async</span> () => {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (featureNeeded) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> feature = <span class="keyword">await</span> <span class="function">import</span>(<span class="string">'./heavy-feature.js'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">feature</span>.<span class="function">init</span>();<br>
+            &nbsp;&nbsp;}<br>
+            };
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan default export dengan bijak</strong> - Untuk ekspor utama modul saja<br>
+          • <strong>Kelompokkan modul terkait</strong> - Modul sebaiknya fokus pada satu fungsionalitas<br>
+          • <strong>Gunakan named exports</strong> - Untuk utilitas dan fungsi pendukung<br>
+          • <strong>Hindari side effects</strong> - Modul sebaiknya pure dan predictable<br>
+          • <strong>Manfaatkan dynamic imports</strong> - Untuk optimasi performa aplikasi besar<br>
+          • <strong>Gunakan alias</strong> - Ketika ada konflik nama atau ingin meningkatkan readability
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Tools untuk Modul JavaScript</h4>
+        <p>Beberapa tools populer untuk bekerja dengan modul: Webpack, Rollup, Parcel (bundler), Babel (transpiler), dan ESLint (linting).</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>MDN JavaScript Modules</strong> - Dokumentasi resmi Mozilla<br>
+          • <strong>ES Modules Spec</strong> - Spesifikasi ECMAScript untuk modul<br>
+          • <strong>Webpack Documentation</strong> - Panduan penggunaan bundler modul<br>
+          • <strong>Tree Shaking</strong> - Teknik optimasi untuk menghapus kode tidak terpakai<br>
+          • <strong>Module Design Patterns</span> - Pola desain untuk struktur modul
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object-Oriented JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Pemrograman Berorientasi Objek JavaScript</h1>
+    <p>Pelajari konsep OOP (Object-Oriented Programming) dalam JavaScript untuk membangun aplikasi yang terstruktur</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Fundamental OOP</h4>
+        <p>Pemrograman Berorientasi Objek (OOP) adalah paradigma pemrograman yang menggunakan objek dan kelas untuk mengorganisasi kode menjadi unit yang dapat digunakan kembali.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>oop-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Object literal</span><br>
+            <span class="keyword">const</span> <span class="variable">user</span> = {<br>
+            &nbsp;&nbsp;<span class="property">name</span>: <span class="string">'John'</span>,<br>
+            &nbsp;&nbsp;<span class="property">age</span>: <span class="number">30</span>,<br>
+            &nbsp;&nbsp;<span class="property">greet</span>: <span class="keyword">function</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="object">console</span>.<span class="function">log</span>(<span class="string">`Hello, my name is <span class="variable">${this.name}</span>`</span>);<br>
+            &nbsp;&nbsp;}<br>
+            };<br><br>
+            
+            <span class="comment">// Constructor function</span><br>
+            <span class="keyword">function</span> <span class="function">Person</span>(<span class="param">name</span>, <span class="param">age</span>) {<br>
+            &nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">name</span> = <span class="variable">name</span>;<br>
+            &nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">age</span> = <span class="variable">age</span>;<br>
+            &nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">greet</span> = <span class="keyword">function</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="object">console</span>.<span class="function">log</span>(<span class="string">`Hello, I'm <span class="variable">${this.name}</span>`</span>);<br>
+            &nbsp;&nbsp;};<br>
+            }<br>
+            <span class="keyword">const</span> <span class="variable">person1</span> = <span class="keyword">new</span> <span class="class">Person</span>(<span class="string">'Alice'</span>, <span class="number">25</span>);
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Object literal</code> - <span class="highlight">Cara sederhana</span> membuat objek<br>
+          • <code>Constructor function</code> - <strong>Fungsi khusus</strong> untuk membuat objek<br>
+          • <code>this</code> - <strong>Referensi</strong> ke objek saat ini<br>
+          • <code>new</code> - <strong>Operator</strong> untuk membuat instance baru<br>
+          • <code>Prototype</code> - <strong>Mekanisme</strong> pewarisan di JavaScript
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>class-syntax.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Class syntax (ES6)</span><br>
+            <span class="keyword">class</span> <span class="class">Animal</span> {<br>
+            &nbsp;&nbsp;<span class="function">constructor</span>(<span class="param">name</span>) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">name</span> = <span class="variable">name</span>;<br>
+            &nbsp;&nbsp;}<br><br>
+            
+            &nbsp;&nbsp;<span class="function">speak</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="object">console</span>.<span class="function">log</span>(<span class="string">`<span class="variable">${this.name}</span> makes a noise.`</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// Inheritance</span><br>
+            <span class="keyword">class</span> <span class="class">Dog</span> <span class="keyword">extends</span> <span class="class">Animal</span> {<br>
+            &nbsp;&nbsp;<span class="function">speak</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="object">console</span>.<span class="function">log</span>(<span class="string">`<span class="variable">${this.name}</span> barks.`</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }<br>
+            <span class="keyword">const</span> <span class="variable">dog</span> = <span class="keyword">new</span> <span class="class">Dog</span>(<span class="string">'Rex'</span>);<br>
+            <span class="variable">dog</span>.<span class="function">speak</span>(); <span class="comment">// Rex barks.</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Browser Support</h4>
+        <p>Class syntax didukung di semua browser modern (Chrome 49+, Firefox 45+, Safari 10+, Edge 13+). Untuk browser lama, gunakan Babel untuk transpilasi.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Encapsulation</code></td>
+              <td>Mengelompokkan data dan fungsi terkait</td>
+              <td><code>class User { ... }</code></td>
+            </tr>
+            <tr>
+              <td><code>Inheritance</code></td>
+              <td>Pewarisan sifat dari class lain</td>
+              <td><code>class Admin extends User</code></td>
+            </tr>
+            <tr>
+              <td><code>Polymorphism</code></td>
+              <td>Kemampuan objek merespon berbeda</td>
+              <td><code>method overriding</code></td>
+            </tr>
+            <tr>
+              <td><code>Abstraction</code></td>
+              <td>Menyembunyikan detail kompleksitas</td>
+              <td><code>private methods</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Encapsulation</strong> - Mengelompokkan data dan perilaku terkait<br>
+          • <strong>Inheritance</strong> - Membuat hierarki class yang dapat diperluas<br>
+          • <strong>Polymorphism</strong> - Method yang sama memberikan hasil berbeda<br>
+          • <strong>Abstraction</strong> - Menyembunyikan detail implementasi yang kompleks
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ES5</th>
+              <th>ES6+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Class definition</td>
+              <td><code>function Person() {}</code></td>
+              <td><code>class Person {}</code></td>
+            </tr>
+            <tr>
+              <td>Inheritance</td>
+              <td><code>Person.prototype = Object.create(Animal.prototype)</code></td>
+              <td><code>class Person extends Animal</code></td>
+            </tr>
+            <tr>
+              <td>Static methods</td>
+              <td><code>Person.someMethod = function() {}</code></td>
+              <td><code>static someMethod() {}</code></td>
+            </tr>
+            <tr>
+              <td>Private fields</td>
+              <td>Convention: <code>_privateField</code></td>
+              <td><code>#privateField</code></td>
+            </tr>
+            <tr>
+              <td>Getters/Setters</td>
+              <td><code>Object.defineProperty()</code></td>
+              <td><code>get name() {}</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Modern JavaScript</h4>
+        <p>ES6+ memperkenalkan sintaks class yang lebih bersih, tetapi di balik layarnya masih menggunakan prototype-based inheritance seperti ES5.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Gunakan class untuk kompleksitas menengah-tinggi, komposisi daripada pewarisan untuk reuse code, dan pertahankan SRP (Single Responsibility Principle).</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>best-practices.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Composition over inheritance</span><br>
+            <span class="keyword">class</span> <span class="class">Walker</span> {<br>
+            &nbsp;&nbsp;<span class="function">walk</span>() { <span class="object">console</span>.<span class="function">log</span>(<span class="string">'Walking...'</span>); }<br>
+            }<br><br>
+            
+            <span class="keyword">class</span> <span class="class">Talker</span> {<br>
+            &nbsp;&nbsp;<span class="function">talk</span>() { <span class="object">console</span>.<span class="function">log</span>(<span class="string">'Hello!'</span>); }<br>
+            }<br><br>
+            
+            <span class="keyword">class</span> <span class="class">Human</span> {<br>
+            &nbsp;&nbsp;<span class="function">constructor</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">walker</span> = <span class="keyword">new</span> <span class="class">Walker</span>();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">talker</span> = <span class="keyword">new</span> <span class="class">Talker</span>();<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// ❌ Avoid - Deep inheritance chains</span><br>
+            <span class="keyword">class</span> <span class="class">A</span> { ... }<br>
+            <span class="keyword">class</span> <span class="class">B</span> <span class="keyword">extends</span> <span class="class">A</span> { ... }<br>
+            <span class="keyword">class</span> <span class="class">C</span> <span class="keyword">extends</span> <span class="class">B</span> { ... }<br>
+            <span class="keyword">class</span> <span class="class">D</span> <span class="keyword">extends</span> <span class="class">C</span> { ... }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Komposisi > Pewarisan</strong> - Lebih fleksibel dan mudah dikelola<br>
+          • <strong>Single Responsibility</strong> - Setiap class harus punya satu tanggung jawab<br>
+          • <strong>Open/Closed Principle</strong> - Terbuka untuk ekstensi, tertutup untuk modifikasi<br>
+          • <strong>Law of Demeter</strong> - Minimalkan ketergantungan antar class<br>
+          • <strong>SOLID Principles</strong> - Pedoman desain OOP yang baik
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Referensi Tambahan</h4>
+        <p>Pelajari lebih lanjut tentang OOP JavaScript di MDN Web Docs atau buku "JavaScript: The Good Parts" oleh Douglas Crockford.</p>
+      </div>
+      
+      <div class="info-box">
+        <h4>⚙️ Modern JavaScript</h4>
+        <p>ES2022 memperkenalkan fitur class fields dan private methods yang membuat OOP di JavaScript semakin matang dan powerful.</p>
+      </div>
+    </section>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>📛 JavaScript OOP</h3>
+        <p>Panduan komprehensif Pemrograman Berorientasi Objek dalam JavaScript</p>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 JS Mastery. Hak cipta dilindungi.</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Github</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Dokumentasi</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Contoh</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

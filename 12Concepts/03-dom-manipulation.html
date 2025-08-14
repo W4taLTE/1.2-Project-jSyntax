@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Manipulasi DOM JavaScript</h1>
+    <p>Pelajari cara memanipulasi Document Object Model (DOM) untuk membuat halaman web interaktif</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Fundamental DOM</h4>
+        <p>DOM (Document Object Model) adalah representasi struktur halaman web yang memungkinkan JavaScript mengubah konten, struktur, dan style secara dinamis.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>dom-manipulation.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Mendapatkan elemen</span><br>
+            <span class="keyword">const</span> <span class="variable">header</span> = <span class="object">document</span>.<span class="function">getElementById</span>(<span class="string">'header'</span>);<br>
+            <span class="keyword">const</span> <span class="variable">buttons</span> = <span class="object">document</span>.<span class="function">querySelectorAll</span>(<span class="string">'.btn'</span>);<br><br>
+            
+            <span class="comment">// Mengubah konten</span><br>
+            <span class="variable">header</span>.<span class="property">textContent</span> = <span class="string">'Judul Baru'</span>;<br>
+            <span class="variable">header</span>.<span class="property">innerHTML</span> = <span class="string">'&lt;span&gt;Judul&lt;/span&gt; Baru'</span>;<br><br>
+            
+            <span class="comment">// Mengubah style</span><br>
+            <span class="variable">header</span>.<span class="property">style</span>.<span class="property">color</span> = <span class="string">'#9333ea'</span>;<br>
+            <span class="variable">header</span>.<span class="property">style</span>.<span class="property">fontSize</span> = <span class="string">'2.5rem'</span>;
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>getElementById()</code> - <span class="highlight">Memilih elemen berdasarkan ID</span><br>
+          • <code>querySelector()</code> - <strong>Memilih elemen pertama yang cocok</strong> dengan selector CSS<br>
+          • <code>querySelectorAll()</code> - <strong>Memilih semua elemen</strong> yang cocok<br>
+          • <code>textContent</code> - <strong>Mengubah teks</strong> dalam elemen<br>
+          • <code>innerHTML</code> - <strong>Mengubah HTML</strong> dalam elemen
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>dom-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Membuat elemen baru</span><br>
+            <span class="keyword">const</span> <span class="variable">newDiv</span> = <span class="object">document</span>.<span class="function">createElement</span>(<span class="string">'div'</span>);<br>
+            <span class="variable">newDiv</span>.<span class="property">className</span> = <span class="string">'card'</span>;<br>
+            <span class="variable">newDiv</span>.<span class="property">textContent</span> = <span class="string">'Kartu Baru'</span>;<br><br>
+            
+            <span class="comment">// Menambahkan ke DOM</span><br>
+            <span class="object">document</span>.<span class="property">body</span>.<span class="function">appendChild</span>(<span class="variable">newDiv</span>);<br><br>
+            
+            <span class="comment">// Event listeners</span><br>
+            <span class="variable">buttons</span>.<span class="function">forEach</span>(<span class="param">btn</span> => {<br>
+            &nbsp;&nbsp;<span class="variable">btn</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, <span class="param">e</span> => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="object">console</span>.<span class="function">log</span>(<span class="string">'Tombol diklik!'</span>);<br>
+            &nbsp;&nbsp;});<br>
+            });<br><br>
+            
+            <span class="comment">// Manipulasi class</span><br>
+            <span class="variable">header</span>.<span class="property">classList</span>.<span class="function">add</span>(<span class="string">'active'</span>);<br>
+            <span class="variable">header</span>.<span class="property">classList</span>.<span class="function">remove</span>(<span class="string">'hidden'</span>);<br>
+            <span class="variable">header</span>.<span class="property">classList</span>.<span class="function">toggle</span>(<span class="string">'dark-mode'</span>);
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Browser Support</h4>
+        <p>Semua metode DOM dasar didukung oleh semua browser modern. Beberapa fitur baru seperti classList didukung sejak IE10+.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>getElementById()</code></td>
+              <td>Memilih elemen berdasarkan ID</td>
+              <td><code>document.getElementById('header')</code></td>
+            </tr>
+            <tr>
+              <td><code>querySelector()</code></td>
+              <td>Memilih elemen pertama yang cocok</td>
+              <td><code>document.querySelector('.btn')</code></td>
+            </tr>
+            <tr>
+              <td><code>querySelectorAll()</code></td>
+              <td>Memilih semua elemen yang cocok</td>
+              <td><code>document.querySelectorAll('p')</code></td>
+            </tr>
+            <tr>
+              <td><code>createElement()</code></td>
+              <td>Membuat elemen baru</td>
+              <td><code>document.createElement('div')</code></td>
+            </tr>
+            <tr>
+              <td><code>appendChild()</code></td>
+              <td>Menambahkan elemen anak</td>
+              <td><code>parent.appendChild(child)</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>getElementById</strong> - Paling cepat untuk memilih elemen dengan ID<br>
+          • <strong>querySelector</strong> - Fleksibel dengan sintaks CSS selector<br>
+          • <strong>querySelectorAll</strong> - Mengembalikan NodeList (bukan Array)<br>
+          • <strong>createElement</strong> - Membuat elemen tapi belum ditambahkan ke DOM<br>
+          • <strong>appendChild</strong> - Menambahkan elemen ke akhir parent
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Property/Method</th>
+              <th>Description</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>classList</code></td>
+              <td>Manipulasi class CSS</td>
+              <td>element.classList.add('active')</td>
+            </tr>
+            <tr>
+              <td><code>dataset</code></td>
+              <td>Akses data attributes</td>
+              <td>element.dataset.userId</td>
+            </tr>
+            <tr>
+              <td><code>closest()</code></td>
+              <td>Mencari parent terdekat</td>
+              <td>element.closest('.container')</td>
+            </tr>
+            <tr>
+              <td><code>matches()</code></td>
+              <td>Memeriksa kecocokan selector</td>
+              <td>element.matches('button.active')</td>
+            </tr>
+            <tr>
+              <td><code>insertAdjacentHTML()</code></td>
+              <td>Menambahkan HTML secara fleksibel</td>
+              <td>element.insertAdjacentHTML('beforeend', html)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Performance Notes</h4>
+        <p>Untuk manipulasi DOM yang kompleks, gunakan DocumentFragment untuk meminimalkan reflow. Event delegation lebih efisien untuk banyak elemen.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Gunakan event delegation untuk elemen dinamis, minimalkan manipulasi DOM langsung, dan cache referensi elemen yang sering digunakan.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>best-practices.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Event delegation</span><br>
+            <span class="object">document</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, <span class="param">e</span> => {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">e</span>.<span class="property">target</span>.<span class="function">matches</span>(<span class="string">'.btn'</span>)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Handle button click</span><br>
+            &nbsp;&nbsp;}<br>
+            });<br><br>
+            
+            <span class="comment">// ✅ Good - Caching elements</span><br>
+            <span class="keyword">const</span> <span class="variable">header</span> = <span class="object">document</span>.<span class="function">getElementById</span>(<span class="string">'header'</span>);<br>
+            <span class="keyword">const</span> <span class="variable">buttons</span> = <span class="object">document</span>.<span class="function">querySelectorAll</span>(<span class="string">'.btn'</span>);<br><br>
+            
+            <span class="comment">// ❌ Avoid - Inline event handlers</span><br>
+            <span class="tag">&lt;button onclick="handleClick()"&gt;Click&lt;/button&gt;</span><br><br>
+            
+            <span class="comment">// ❌ Avoid - Frequent DOM updates</span><br>
+            <span class="keyword">for</span> (<span class="keyword">let</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="number">1000</span>; <span class="variable">i</span>++) {<br>
+            &nbsp;&nbsp;<span class="object">document</span>.<span class="property">body</span>.<span class="function">appendChild</span>(<span class="object">document</span>.<span class="function">createElement</span>(<span class="string">'div'</span>));<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Event delegation</strong> - Lebih efisien untuk elemen dinamis<br>
+          • <strong>Cache references</strong> - Hindari query DOM berulang<br>
+          • <strong>Batch updates</strong> - Gunakan DocumentFragment untuk banyak perubahan<br>
+          • <strong>Debounce events</strong> - Untuk scroll/resize yang sering terjadi<br>
+          • <strong>Virtual DOM</strong> - Pertimbangkan untuk aplikasi kompleks
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Referensi Tambahan</h4>
+        <p>Pelajari lebih lanjut tentang DOM Manipulation di MDN Web Docs atau buku-buku JavaScript modern seperti "Eloquent JavaScript".</p>
+      </div>
+      
+      <div class="info-box">
+        <h4>⚙️ Modern Alternatives</h4>
+        <p>Untuk aplikasi kompleks, pertimbangkan library seperti React, Vue, atau Angular yang menggunakan Virtual DOM untuk performa lebih baik.</p>
+      </div>
+    </section>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>📛 JavaScript DOM Manipulation</h3>
+        <p>Panduan komprehensif manipulasi DOM untuk pengembangan web interaktif</p>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 JS Mastery. Hak cipta dilindungi.</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Github</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Dokumentasi</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Contoh</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

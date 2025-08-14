@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Error Handling</h1>
+    <p>Panduan lengkap penanganan error di JavaScript untuk aplikasi yang lebih robust</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Error Handling</h4>
+        <p>Error handling adalah teknik untuk menangani dan merespons error yang terjadi selama eksekusi program. JavaScript menyediakan beberapa mekanisme untuk menangani error secara efektif.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>error-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Try-Catch Block</span><br>
+            <span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;<span class="comment">// Kode yang mungkin menghasilkan error</span><br>
+            &nbsp;&nbsp;<span class="function">JSON</span>.<span class="function">parse</span>(<span class="string">'{invalid json}'</span>);<br>
+            } <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(<span class="string">'Terjadi error:'</span>, error.<span class="property">message</span>);<br>
+            }<br><br>
+            
+            <span class="comment">// Throw Error</span><br>
+            <span class="keyword">function</span> <span class="function">divide</span>(a, b) {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (b === 0) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw new</span> <span class="class">Error</span>(<span class="string">'Pembagian dengan nol tidak diperbolehkan'</span>);<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> a / b;<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>try-catch</code> - <span class="highlight">Blok untuk menangkap dan menangani error</span><br>
+          • <code>throw</code> - <strong>Melempar error secara manual</strong><br>
+          • <code>Error</code> - <strong>Constructor untuk membuat objek error</strong><br>
+          • <code>finally</code> - <strong>Blok yang selalu dijalankan setelah try/catch</strong><br>
+          • <code>error.message</code> - <strong>Property yang berisi pesan error</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>error-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Custom Error</span><br>
+            <span class="keyword">class</span> <span class="class">ValidationError</span> <span class="keyword">extends</span> <span class="class">Error</span> {<br>
+            &nbsp;&nbsp;<span class="function">constructor</span>(message) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">super</span>(message);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'ValidationError'</span>;<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// Error Handling di Async/Await</span><br>
+            <span class="keyword">async</span> <span class="keyword">function</span> <span class="function">fetchData</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.example.com/data'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (!response.<span class="property">ok</span>) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw new</span> <span class="class">Error</span>(<span class="string">'Gagal mengambil data'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">await</span> response.<span class="function">json</span>();<br>
+            &nbsp;&nbsp;} <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(<span class="string">'Error fetch:'</span>, error);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw</span> error; <span class="comment">// Re-throw error</span><br>
+            &nbsp;&nbsp;}<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Jenis Error Umum</h4>
+        <p>JavaScript memiliki beberapa tipe error bawaan: SyntaxError, ReferenceError, TypeError, RangeError, URIError, dan EvalError.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>error-types.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Tipe Error dan Penyebabnya</span><br>
+            <span class="class">SyntaxError</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Kode JavaScript tidak valid</span><br>
+            <span class="class">ReferenceError</span> &nbsp;<span class="comment">// Referensi ke variabel/fungsi yang tidak ada</span><br>
+            <span class="class">TypeError</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Operasi pada tipe data yang salah</span><br>
+            <span class="class">RangeError</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Nilai di luar rentang yang valid</span><br>
+            <span class="class">URIError</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Parameter fungsi encode/decode URI tidak valid</span><br>
+            <span class="class">EvalError</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Error terkait fungsi eval() (tidak digunakan lagi)</span><br><br>
+            
+            <span class="comment">// Property Objek Error</span><br>
+            error.<span class="property">name</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Nama error (misal: "TypeError")</span><br>
+            error.<span class="property">message</span> &nbsp;<span class="comment">// Pesan error deskriptif</span><br>
+            error.<span class="property">stack</span> &nbsp;&nbsp;&nbsp;<span class="comment">// Stack trace (debugging)</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>SyntaxError</strong> - Terjadi saat ada kesalahan sintaks dalam kode<br>
+          • <strong>ReferenceError</strong> - Saat mencoba mengakses variabel/fungsi yang tidak terdefinisi<br>
+          • <strong>TypeError</strong> - Operasi pada tipe data yang tidak sesuai (misal memanggil null sebagai fungsi)<br>
+          • <span class="highlight">Error Custom</span> bisa dibuat dengan extend class Error untuk kasus spesifik<br>
+          • <strong>Stack trace</strong> membantu melacak sumber error dalam kode
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-error.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Error Boundaries (React)</span><br>
+            <span class="keyword">class</span> <span class="class">ErrorBoundary</span> <span class="keyword">extends</span> <span class="class">React.Component</span> {<br>
+            &nbsp;&nbsp;<span class="function">componentDidCatch</span>(error, info) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">logErrorToService</span>(error, info.<span class="property">componentStack</span>);<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;<span class="function">render</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return this</span>.<span class="property">props</span>.<span class="property">children</span>;<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// Global Error Handling</span><br>
+            <span class="function">window</span>.<span class="function">addEventListener</span>(<span class="string">'error'</span>, (event) => {<br>
+            &nbsp;&nbsp;<span class="function">sendErrorToAnalytics</span>(event.<span class="property">error</span>);<br>
+            });<br><br>
+            
+            <span class="comment">// Promise Rejection Handling</span><br>
+            <span class="function">window</span>.<span class="function">addEventListener</span>(<span class="string">'unhandledrejection'</span>, (event) => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(<span class="string">'Unhandled rejection:'</span>, event.<span class="property">reason</span>);<br>
+            });
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Error Handling Level Tinggi</h4>
+        <p>Error Boundaries di React menangkap error di komponen child. Global error handler menangkap error yang tidak tertangkap. Unhandled rejection handler untuk Promise yang gagal.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices Error Handling</h4>
+        <p>Tangkap error secara spesifik, gunakan custom error untuk domain bisnis, log error untuk debugging, dan beri feedback yang jelas ke pengguna.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>error-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Error handling spesifik</span><br>
+            <span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;<span class="function">processUserInput</span>(input);<br>
+            } <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (error <span class="keyword">instanceof</span> <span class="class">ValidationError</span>) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">showUserMessage</span>(error.<span class="property">message</span>);<br>
+            &nbsp;&nbsp;} <span class="keyword">else</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">logError</span>(error);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">showGenericError</span>();<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// ❌ Avoid - Menangkap semua error secara generik</span><br>
+            <span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;<span class="function">someOperation</span>();<br>
+            } <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Terjadi error'</span>);<br>
+            }<br><br>
+            
+            <span class="comment">// ✅ Better - Error handling di async/await</span><br>
+            <span class="keyword">async</span> <span class="keyword">function</span> <span class="function">loadData</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> data = <span class="keyword">await</span> <span class="function">fetchData</span>();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="function">process</span>(data);<br>
+            &nbsp;&nbsp;} <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">handleDataError</span>(error);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw</span> error; <span class="comment">// Re-throw untuk penanganan lebih lanjut</span><br>
+            &nbsp;&nbsp;}<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Tangkap error secara spesifik</strong> - Gunakan instanceof untuk membedakan tipe error<br>
+          • <strong>Gunakan custom error</strong> - Buat kelas error khusus untuk domain aplikasi<br>
+          • <strong>Log error</strong> - Catat error untuk keperluan debugging dan monitoring<br>
+          • <strong>Beri feedback</strong> - Tampilkan pesan yang bermakna untuk pengguna<br>
+          • <strong>Jangan menelan error</strong> - Re-throw error yang tidak bisa ditangani dengan benar<br>
+          • <strong>Gunakan finally</strong> - Untuk kode pembersihan yang harus selalu dijalankan
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Tools untuk Error Handling</h4>
+        <p>Beberapa tools populer untuk error handling: Sentry (error tracking), Bugsnag, Rollbar, dan LogRocket untuk reproduksi error.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>MDN Error Handling</strong> - Dokumentasi resmi Mozilla<br>
+          • <strong>JavaScript.info Error Handling</strong> - Tutorial komprehensif<br>
+          • <strong>Node.js Error Handling</strong> - Best practices untuk backend<br>
+          • <strong>Error Handling in Async/Await</strong> - Pola untuk kode async<br>
+          • <strong>Production Error Monitoring</strong> - Tools untuk aplikasi production
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

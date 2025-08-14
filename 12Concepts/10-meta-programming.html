@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Meta Programming</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Meta Programming JavaScript</h1>
+    <p>Panduan lengkap teknik meta programming di JavaScript untuk manipulasi kode tingkat lanjut</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Meta Programming</h4>
+        <p>Meta programming adalah teknik memprogram program yang memanipulasi atau menghasilkan kode lain. JavaScript menyediakan beberapa fitur untuk meta programming seperti Proxy, Reflect, dan Symbol.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>meta-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Proxy - Membungkus objek dengan custom behavior</span><br>
+            <span class="keyword">const</span> target = { message: <span class="string">"hello"</span> };<br>
+            <span class="keyword">const</span> handler = {<br>
+            &nbsp;&nbsp;<span class="function">get</span>(target, prop) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> target[prop].<span class="function">toUpperCase</span>();<br>
+            &nbsp;&nbsp;}<br>
+            };<br>
+            <span class="keyword">const</span> proxy = <span class="keyword">new</span> <span class="class">Proxy</span>(target, handler);<br>
+            <span class="function">console</span>.<span class="function">log</span>(proxy.<span class="property">message</span>); <span class="comment">// "HELLO"</span><br><br>
+            
+            <span class="comment">// Symbol - Membuat identifier unik</span><br>
+            <span class="keyword">const</span> id = <span class="function">Symbol</span>(<span class="string">'id'</span>);<br>
+            <span class="keyword">const</span> obj = { [id]: 123 };<br>
+            <span class="function">console</span>.<span class="function">log</span>(obj[id]); <span class="comment">// 123</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Proxy</code> - <span class="highlight">Membungkus objek untuk mengubah perilaku dasar</span><br>
+          • <code>Reflect</code> - <strong>Metode untuk operasi objek yang dapat dipantulkan</strong><br>
+          • <code>Symbol</code> - <strong>Nilai primitif unik yang tidak bisa diubah</strong><br>
+          • <code>eval</code> - <strong>Menjalankan string sebagai kode (hati-hati penggunaannya)</strong><br>
+          • <code>Function constructor</code> - <strong>Membuat fungsi dari string</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>meta-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Reflect API</span><br>
+            <span class="keyword">const</span> obj = { x: 1, y: 2 };<br>
+            <span class="function">console</span>.<span class="function">log</span>(<span class="function">Reflect</span>.<span class="function">get</span>(obj, <span class="string">'x'</span>)); <span class="comment">// 1</span><br>
+            <span class="function">Reflect</span>.<span class="function">set</span>(obj, <span class="string">'z'</span>, 3);<br>
+            <span class="function">console</span>.<span class="function">log</span>(obj.<span class="property">z</span>); <span class="comment">// 3</span><br><br>
+            
+            <span class="comment">// Well-known Symbols</span><br>
+            <span class="keyword">class</span> <span class="class">MyClass</span> {<br>
+            &nbsp;&nbsp;[<span class="function">Symbol</span>.<span class="property">toStringTag</span>] = <span class="string">'MyClass'</span>;<br>
+            }<br>
+            <span class="function">console</span>.<span class="function">log</span>(<span class="keyword">new</span> <span class="class">MyClass</span>().<span class="function">toString</span>()); <span class="comment">// [object MyClass]</span><br><br>
+            
+            <span class="comment">// Generator Functions</span><br>
+            <span class="keyword">function</span>* <span class="function">idGenerator</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">let</span> id = 1;<br>
+            &nbsp;&nbsp;<span class="keyword">while</span>(<span class="keyword">true</span>) <span class="keyword">yield</span> id++;<br>
+            }<br>
+            <span class="keyword">const</span> gen = <span class="function">idGenerator</span>();<br>
+            <span class="function">console</span>.<span class="function">log</span>(gen.<span class="function">next</span>().<span class="property">value</span>); <span class="comment">// 1</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Kasus Penggunaan Meta Programming</h4>
+        <p>Meta programming berguna untuk: validasi data, logging otomatis, ORM, mocking, implementasi DSL (Domain Specific Language), dan framework tingkat lanjut.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>meta-tables.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Trap Methods pada Proxy</span><br>
+            <span class="class">get</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Trap untuk membaca properti</span><br>
+            <span class="class">set</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Trap untuk menulis properti</span><br>
+            <span class="class">apply</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Trap untuk pemanggilan fungsi</span><br>
+            <span class="class">construct</span> <span class="comment">// Trap untuk operator new</span><br>
+            <span class="class">has</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Trap untuk operator in</span><br><br>
+            
+            <span class="comment">// Well-known Symbols</span><br>
+            <span class="function">Symbol</span>.<span class="property">iterator</span> &nbsp;&nbsp;&nbsp;<span class="comment">// Untuk iterasi objek</span><br>
+            <span class="function">Symbol</span>.<span class="property">toStringTag</span> <span class="comment">// Mengubah perilaku toString</span><br>
+            <span class="function">Symbol</span>.<span class="property">hasInstance</span> &nbsp;<span class="comment">// Custom instanceof behavior</span><br>
+            <span class="function">Symbol</span>.<span class="property">species</span> &nbsp;&nbsp;&nbsp;<span class="comment">// Menentukan constructor untuk derived objects</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Proxy Traps</strong> - Memungkinkan intercept operasi dasar objek<br>
+          • <strong>Reflect Methods</strong> - Menyediakan operasi yang sama dengan traps untuk consistency<br>
+          • <span class="highlight">Well-known Symbols</span> - Mengubah perilaku built-in JavaScript<br>
+          • <strong>Generator Functions</strong> - Fungsi yang bisa dihentikan dan dilanjutkan<br>
+          • <strong>Iterator Protocol</strong> - Mendefinisikan cara mengiterasi objek kustom
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-meta.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Membuat DSL (Domain Specific Language)</span><br>
+            <span class="keyword">function</span> <span class="function">createDSL</span>(methods) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="class">Proxy</span>({}, {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">get</span>(target, prop) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> methods[prop] || (() => <span class="function">console</span>.<span class="function">log</span>(<span class="string">`Called <span class="hljs-subst">${prop}</span>`</span>));<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;});<br>
+            }<br>
+            <span class="keyword">const</span> dsl = <span class="function">createDSL</span>({ save: () => <span class="function">console</span>.<span class="function">log</span>(<span class="string">'Saving...'</span>) });<br>
+            <span class="function">dsl</span>.<span class="function">save</span>(); <span class="comment">// "Saving..."</span><br>
+            <span class="function">dsl</span>.<span class="function">delete</span>(); <span class="comment">// "Called delete"</span><br><br>
+            
+            <span class="comment">// Membuat ORM sederhana</span><br>
+            <span class="keyword">class</span> <span class="class">Model</span> {<br>
+            &nbsp;&nbsp;<span class="function">constructor</span>(attrs) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="class">Proxy</span>(<span class="keyword">this</span>, {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">get</span>(target, prop) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> attrs[prop] || target[prop];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;<span class="function">save</span>() { <span class="function">console</span>.<span class="function">log</span>(<span class="string">'Saving model...'</span>); }<br>
+            }<br>
+            <span class="keyword">const</span> user = <span class="keyword">new</span> <span class="class">Model</span>({ name: <span class="string">'John'</span> });<br>
+            <span class="function">console</span>.<span class="function">log</span>(user.<span class="property">name</span>); <span class="comment">// "John"</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Aplikasi Lanjutan</h4>
+        <p>Meta programming memungkinkan pembuatan: sistem validasi dinamis, ORM/ODM, mocking libraries, testing frameworks, dan embedded DSLs untuk domain spesifik.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices Meta Programming</h4>
+        <p>Gunakan meta programming dengan bijak, dokumentasikan dengan baik, dan pertahankan readability kode. Jangan terlalu cerdas sampai kode sulit dipahami.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>meta-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Proxy untuk validasi</span><br>
+            <span class="keyword">function</span> <span class="function">createValidator</span>(target, schema) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="class">Proxy</span>(target, {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">set</span>(target, prop, value) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (schema[prop] && !schema[prop](value)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw new</span> <span class="class">Error</span>(<span class="string">`Invalid value for <span class="hljs-subst">${prop}</span>`</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target[prop] = value;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">true</span>;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;});<br>
+            }<br><br>
+            
+            <span class="comment">// ❌ Avoid - Terlalu banyak magic</span><br>
+            <span class="keyword">const</span> magic = <span class="keyword">new</span> <span class="class">Proxy</span>({}, {<br>
+            &nbsp;&nbsp;<span class="function">get</span>(target, prop) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="class">Function</span>(<span class="string">'...args'</span>, <span class="string">`console.log("Called <span class="hljs-subst">${prop}</span> with"</span>, args)`);<br>
+            &nbsp;&nbsp;}<br>
+            });<br>
+            <span class="comment">// Sulit dipahami dan debug</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan untuk kasus yang tepat</strong> - Seperti validasi, logging, atau abstraksi kompleks<br>
+          • <strong>Dokumentasikan dengan baik</strong> - Kode meta programming bisa membingungkan<br>
+          • <strong>Pertahankan readability</strong> - Jangan mengorbankan kejelasan untuk kecerdasan<br>
+          • <strong>Hindari eval dan Function constructor</strong> - Kecuali benar-benar diperlukan<br>
+          • <strong>Gunakan TypeScript</strong> - Untuk membantu memahami kode yang kompleks<br>
+          • <strong>Test secara menyeluruh</strong> - Meta programming bisa memiliki edge cases yang tidak terduga
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Library Meta Programming</h4>
+        <p>Beberapa library yang menggunakan meta programming: MobX (reactive state), Immer (immutable updates), TypeORM (database ORM), dan berbagai testing frameworks.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>MDN Proxy and Reflect</strong> - Dokumentasi resmi Mozilla<br>
+          • <strong>ECMAScript Spec</strong> - Spesifikasi lengkap meta programming<br>
+          • <strong>Exploring ES6</strong> - Buku oleh Axel Rauschmayer<br>
+          • <strong>Metaprogramming in JavaScript</strong> - Artikel dan tutorial<br>
+          • <strong>Design Patterns dengan Proxy</strong> - Implementasi pattern seperti Decorator
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

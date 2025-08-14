@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basic Syntax Demo</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Basic Syntax JavaScript</h1>
+    <p>Panduan lengkap sintaks dasar JavaScript untuk pemrograman web modern</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Fundamental JavaScript</h4>
+        <p>JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web interaktif. Memahami sintaks dasar adalah kunci untuk menguasai JavaScript.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>basic.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Variabel dan Tipe Data</span><br>
+            <span class="keyword">let</span> nama = <span class="string">'Budi'</span>; <span class="comment">// String</span><br>
+            <span class="keyword">const</span> umur = <span class="number">25</span>; <span class="comment">// Number</span><br>
+            <span class="keyword">let</span> aktif = <span class="keyword">true</span>; <span class="comment">// Boolean</span><br><br>
+            
+            <span class="comment">// Array</span><br>
+            <span class="keyword">const</span> buah = [<span class="string">'Apel'</span>, <span class="string">'Mangga'</span>, <span class="string">'Jeruk'</span>];<br><br>
+            
+            <span class="comment">// Object</span><br>
+            <span class="keyword">const</span> user = {<br>
+            &nbsp;&nbsp;nama: <span class="string">'Budi'</span>,<br>
+            &nbsp;&nbsp;umur: <span class="number">25</span>,<br>
+            &nbsp;&nbsp;aktif: <span class="keyword">true</span><br>
+            };
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>let</code> - <span class="highlight">Variabel yang bisa diubah</span> nilainya<br>
+          • <code>const</code> - <strong>Konstanta</strong> yang tidak bisa diubah setelah dideklarasikan<br>
+          • <code>//</code> - <strong>Komentar</strong> untuk penjelasan kode<br>
+          • <code>[]</code> - <strong>Array</strong> untuk menyimpan koleksi data<br>
+          • <code>{}</code> - <strong>Object</strong> untuk menyimpan data dalam properti
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>functions.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Function Declaration</span><br>
+            <span class="keyword">function</span> sapa(nama) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="string">`Halo, <span class="interpolation">${nama}</span>!`</span>;<br>
+            }<br><br>
+            
+            <span class="comment">// Function Expression</span><br>
+            <span class="keyword">const</span> tambah = <span class="keyword">function</span>(a, b) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> a + b;<br>
+            };<br><br>
+            
+            <span class="comment">// Arrow Function (ES6)</span><br>
+            <span class="keyword">const</span> kali = (a, b) => a * b;<br><br>
+            
+            <span class="comment">// Pemanggilan Fungsi</span><br>
+            <span class="keyword">const</span> hasil = tambah(<span class="number">5</span>, <span class="number">3</span>); <span class="comment">// 8</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Fitur ES6+</h4>
+        <p>ES6 (2015) memperkenalkan fitur modern seperti arrow functions, template literals, let/const, dan banyak lagi. Didukung oleh semua browser modern.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>operators.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Operator Aritmatika</span><br>
+            <span class="keyword">let</span> x = <span class="number">10</span> + <span class="number">5</span>; <span class="comment">// 15</span><br>
+            <span class="keyword">let</span> y = <span class="number">10</span> % <span class="number">3</span>; <span class="comment">// 1 (modulus)</span><br><br>
+            
+            <span class="comment">// Operator Perbandingan</span><br>
+            <span class="keyword">let</span> sama = <span class="number">10</span> == <span class="string">'10'</span>; <span class="comment">// true (loose equality)</span><br>
+            <span class="keyword">let</span> identik = <span class="number">10</span> === <span class="string">'10'</span>; <span class="comment">// false (strict equality)</span><br><br>
+            
+            <span class="comment">// Operator Logika</span><br>
+            <span class="keyword">let</span> hasil = (<span class="number">10</span> > <span class="number">5</span>) && (<span class="number">20</span> > <span class="number">15</span>); <span class="comment">// true</span><br>
+            <span class="keyword">let</span> hasil2 = !<span class="keyword">true</span>; <span class="comment">// false</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Aritmatika</strong>: +, -, *, /, %, ** (pangkat)<br>
+          • <strong>Perbandingan</strong>: ==, ===, !=, !==, >, <, >=, <=<br>
+          • <strong>Logika</strong>: && (AND), || (OR), ! (NOT)<br>
+          • <span class="highlight">===</span> lebih disarankan daripada == untuk menghindari type coercion
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>control-flow.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Kondisi if-else</span><br>
+            <span class="keyword">if</span> (umur >= <span class="number">18</span>) {<br>
+            &nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(<span class="string">'Dewasa'</span>);<br>
+            } <span class="keyword">else</span> {<br>
+            &nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(<span class="string">'Anak-anak'</span>);<br>
+            }<br><br>
+            
+            <span class="comment">// Switch Case</span><br>
+            <span class="keyword">switch</span>(buah) {<br>
+            &nbsp;&nbsp;<span class="keyword">case</span> <span class="string">'Apel'</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(<span class="string">'Ini apel'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;<br>
+            &nbsp;&nbsp;<span class="keyword">case</span> <span class="string">'Mangga'</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(<span class="string">'Ini mangga'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;<br>
+            &nbsp;&nbsp;<span class="keyword">default</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(<span class="string">'Buah lain'</span>);<br>
+            }<br><br>
+            
+            <span class="comment">// Looping</span><br>
+            <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i < <span class="number">5</span>; i++) {<br>
+            &nbsp;&nbsp;<span class="console">console</span>.<span class="method">log</span>(i);<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Modern JavaScript</h4>
+        <p>ES6+ memperkenalkan banyak fitur baru seperti template literals, destructuring, spread operator, dan async/await yang membuat kode lebih efisien.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Gunakan const sebanyak mungkin, hindari var, berikan nama variabel/fungsi yang deskriptif, dan gunakan ESLint untuk konsistensi kode.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>best-practices.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Clean and readable</span><br>
+            <span class="keyword">const</span> calculateTotal = (price, quantity) => {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> price * quantity;<br>
+            };<br><br>
+            
+            <span class="comment">// ❌ Avoid - Unclear naming</span><br>
+            <span class="keyword">function</span> calc(a, b) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> a * b;<br>
+            }<br><br>
+            
+            <span class="comment">// ✅ Good - Template literals</span><br>
+            <span class="keyword">const</span> greeting = <span class="string">`Halo, <span class="interpolation">${nama}</span>. Umur Anda <span class="interpolation">${umur}</span> tahun.`</span>;<br><br>
+            
+            <span class="comment">// ❌ Avoid - String concatenation</span><br>
+            <span class="keyword">const</span> greeting2 = <span class="string">'Halo, ' + nama + '. Umur Anda ' + umur + ' tahun.'</span>;
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan const</strong> kecuali variabel perlu diubah<br>
+          • <strong>Nama deskriptif</strong> untuk variabel dan fungsi<br>
+          • <strong>Template literals</strong> lebih mudah dibaca daripada concatenation<br>
+          • <strong>ESLint/Prettier</strong> untuk konsistensi gaya kode<br>
+          • <strong>Komunikasikan intent</strong> melalui penamaan yang baik
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Sumber Belajar</h4>
+        <p>MDN Web Docs, JavaScript.info, Eloquent JavaScript, dan dokumentasi resmi ECMAScript adalah sumber terbaik untuk mempelajari JavaScript lebih dalam.</p>
+      </div>
+      
+      <div class="info-box">
+        <h4>⚡ Versi JavaScript</h4>
+        <p>ES6 (2015) adalah pembaruan besar terakhir. ECMAScript merilis versi baru setiap tahun (ES2016, ES2017, dst) dengan fitur tambahan.</p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

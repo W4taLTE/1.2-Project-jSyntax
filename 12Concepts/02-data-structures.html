@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Data Structures</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Struktur Data JavaScript</h1>
+    <p>Pelajari berbagai struktur data fundamental dalam JavaScript untuk pengembangan web modern</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Fundamental Data Structures</h4>
+        <p>JavaScript menyediakan berbagai struktur data bawaan untuk menyimpan dan mengorganisasi data. Memahami struktur data adalah kunci untuk menulis kode yang efisien.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>data-structures.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Array - Ordered collection</span><br>
+            <span class="keyword">const</span> <span class="variable">fruits</span> = [<span class="string">'Apple'</span>, <span class="string">'Banana'</span>, <span class="string">'Cherry'</span>];<br><br>
+            
+            <span class="comment">// Object - Key-value pairs</span><br>
+            <span class="keyword">const</span> <span class="variable">person</span> = {<br>
+            &nbsp;&nbsp;<span class="property">name</span>: <span class="string">'John'</span>,<br>
+            &nbsp;&nbsp;<span class="property">age</span>: <span class="number">30</span>,<br>
+            &nbsp;&nbsp;<span class="property">isAdmin</span>: <span class="keyword">true</span><br>
+            };<br><br>
+            
+            <span class="comment">// Set - Unique values</span><br>
+            <span class="keyword">const</span> <span class="variable">uniqueNumbers</span> = <span class="keyword">new</span> <span class="class">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]);<br><br>
+            
+            <span class="comment">// Map - Keyed collections</span><br>
+            <span class="keyword">const</span> <span class="variable">userMap</span> = <span class="keyword">new</span> <span class="class">Map</span>();<br>
+            <span class="variable">userMap</span>.<span class="function">set</span>(<span class="string">'name'</span>, <span class="string">'Alice'</span>);<br>
+            <span class="variable">userMap</span>.<span class="function">set</span>(<span class="string">'age'</span>, <span class="number">25</span>);
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Array</code> - <span class="highlight">Koleksi terurut</span> dengan indeks numerik<br>
+          • <code>Object</code> - <strong>Key-value pairs</strong> untuk data terstruktur<br>
+          • <code>Set</code> - <strong>Nilai unik</strong> tanpa duplikat<br>
+          • <code>Map</code> - <strong>Koleksi terurut</strong> dengan berbagai tipe key<br>
+          • <code>WeakMap/WeakSet</code> - Untuk memory management yang lebih baik
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>data-operations.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Array methods</span><br>
+            <span class="variable">fruits</span>.<span class="function">push</span>(<span class="string">'Durian'</span>); <span class="comment">// Add to end</span><br>
+            <span class="variable">fruits</span>.<span class="function">pop</span>(); <span class="comment">// Remove from end</span><br>
+            <span class="variable">fruits</span>.<span class="function">map</span>(<span class="param">fruit</span> => fruit.<span class="function">toUpperCase</span>());<br><br>
+            
+            <span class="comment">// Object operations</span><br>
+            <span class="keyword">const</span> <span class="variable">name</span> = <span class="variable">person</span>.<span class="property">name</span>; <span class="comment">// Dot notation</span><br>
+            <span class="keyword">const</span> <span class="variable">age</span> = <span class="variable">person</span>[<span class="string">'age'</span>]; <span class="comment">// Bracket notation</span><br>
+            <span class="keyword">const</span> <span class="variable">keys</span> = <span class="object">Object</span>.<span class="function">keys</span>(<span class="variable">person</span>);<br><br>
+            
+            <span class="comment">// Set operations</span><br>
+            <span class="variable">uniqueNumbers</span>.<span class="function">add</span>(<span class="number">4</span>);<br>
+            <span class="variable">uniqueNumbers</span>.<span class="function">has</span>(<span class="number">2</span>); <span class="comment">// true</span><br>
+            <span class="variable">uniqueNumbers</span>.<span class="function">delete</span>(<span class="number">1</span>);
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Browser Support</h4>
+        <p>Semua struktur data dasar didukung oleh semua browser modern. Map/Set didukung sejak ES6 (Chrome 51+, Firefox 53+, Edge 15+, Safari 10+).</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Structure</th>
+              <th>Use Case</th>
+              <th>Mutability</th>
+              <th>Performance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Array</code></td>
+              <td>Daftar terurut, sering diubah</td>
+              <td>Mutable</td>
+              <td>O(1) access, O(n) search</td>
+            </tr>
+            <tr>
+              <td><code>Object</code></td>
+              <td>Data terstruktur, key-value</td>
+              <td>Mutable</td>
+              <td>O(1) access by key</td>
+            </tr>
+            <tr>
+              <td><code>Set</code></td>
+              <td>Koleksi nilai unik</td>
+              <td>Mutable</td>
+              <td>O(1) for add/delete/has</td>
+            </tr>
+            <tr>
+              <td><code>Map</code></td>
+              <td>Key-value dengan berbagai tipe key</td>
+              <td>Mutable</td>
+              <td>O(1) for operations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Array</strong> - Ideal untuk koleksi yang sering diakses secara berurutan<br>
+          • <strong>Object</strong> - Terbaik untuk data terstruktur dengan properti tetap<br>
+          • <strong>Set</code> - Sempurna untuk memastikan keunikan nilai<br>
+            • <strong>Map</strong> - Fleksibel dengan berbagai tipe key dan mempertahankan urutan
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Array</th>
+              <th>Set</th>
+              <th>Map</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Add item</td>
+              <td><code>push()</code>, <code>unshift()</code></td>
+              <td><code>add()</code></td>
+              <td><code>set()</code></td>
+            </tr>
+            <tr>
+              <td>Remove item</td>
+              <td><code>pop()</code>, <code>shift()</code></td>
+              <td><code>delete()</code></td>
+              <td><code>delete()</code></td>
+            </tr>
+            <tr>
+              <td>Check existence</td>
+              <td><code>includes()</code></td>
+              <td><code>has()</code></td>
+              <td><code>has()</code></td>
+            </tr>
+            <tr>
+              <td>Size</td>
+              <td><code>length</code></td>
+              <td><code>size</code></td>
+              <td><code>size</code></td>
+            </tr>
+            <tr>
+              <td>Iteration</td>
+              <td><code>forEach()</code>, <code>map()</code></td>
+              <td><code>forEach()</code></td>
+              <td><code>forEach()</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Performance Notes</h4>
+        <p>Untuk operasi pencarian yang sering, Set/Map lebih efisien (O(1)) dibanding Array (O(n)). Gunakan struktur data yang sesuai dengan kebutuhan performa.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Pilih struktur data berdasarkan kebutuhan: Array untuk koleksi terurut, Object untuk data terstruktur, Set untuk nilai unik, Map untuk key-value kompleks.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>best-practices.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Use Map for dynamic key-value pairs</span><br>
+            <span class="keyword">const</span> <span class="variable">userSettings</span> = <span class="keyword">new</span> <span class="class">Map</span>();<br>
+            <span class="variable">userSettings</span>.<span class="function">set</span>(<span class="string">'theme'</span>, <span class="string">'dark'</span>);<br>
+            <span class="variable">userSettings</span>.<span class="function">set</span>(<span class="string">'notifications'</span>, <span class="keyword">true</span>);<br><br>
+            
+            <span class="comment">// ✅ Good - Use Set for unique values</span><br>
+            <span class="keyword">const</span> <span class="variable">uniqueTags</span> = <span class="keyword">new</span> <span class="class">Set</span>([<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'js'</span>]);<br><br>
+            
+            <span class="comment">// ❌ Avoid - Using arrays for unique values</span><br>
+            <span class="keyword">const</span> <span class="variable">tags</span> = [<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'js'</span>];<br>
+            <span class="keyword">const</span> <span class="variable">uniqueTags</span> = [...<span class="keyword">new</span> <span class="class">Set</span>(<span class="variable">tags</span>)];
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan Map bukan Object</strong> ketika key bersifat dinamis atau berbagai tipe<br>
+          • <strong>Gunakan Set bukan Array</strong> ketika perlu menjamin keunikan nilai<br>
+          • <strong>Pertimbangkan performa</strong> untuk operasi yang sering dilakukan<br>
+          • <strong>Gunakan WeakMap/WeakSet</strong> untuk memory-sensitive applications<br>
+          • <strong>ES6+ features</strong> memberikan solusi yang lebih elegan
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Referensi Tambahan</h4>
+        <p>Untuk mempelajari lebih dalam tentang struktur data JavaScript, kunjungi dokumentasi MDN Web Docs atau buku-buku algoritma populer.</p>
+      </div>
+      
+      <div class="info-box">
+        <h4>⚙️ ECMAScript Compatibility</h4>
+        <p>Map/Set diperkenalkan di ES6 (2015). Beberapa method seperti Array.includes() ditambahkan di ES7 (2016). Pastikan kompatibilitas browser target Anda.</p>
+      </div>
+    </section>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>📛 JavaScript Data Structures</h3>
+        <p>Panduan komprehensif struktur data JavaScript untuk pengembangan web modern</p>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 JS Mastery. Hak cipta dilindungi.</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Github</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Dokumentasi</a>
+          <span class="divider">•</span>
+          <a href="#" class="footer-link">Contoh</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

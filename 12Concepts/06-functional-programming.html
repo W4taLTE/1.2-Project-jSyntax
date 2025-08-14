@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Programming JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Functional Programming</h1>
+    <p>Panduan konsep Functional Programming dalam JavaScript dengan contoh praktis</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Functional Programming</h4>
+        <p>Functional Programming (FP) adalah paradigma pemrograman di mana komputasi diperlakukan sebagai evaluasi fungsi matematika dan menghindari perubahan state dan data yang mutable.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>fp-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Pure Function</span><br>
+            <span class="keyword">function</span> <span class="function">add</span>(a, b) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> a + b;<br>
+            }<br><br>
+            
+            <span class="comment">// Higher-Order Function</span><br>
+            <span class="keyword">function</span> <span class="function">multiplyBy</span>(factor) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">function</span>(num) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> num * factor;<br>
+            &nbsp;&nbsp;};<br>
+            }<br><br>
+            
+            <span class="comment">// Immutable Data</span><br>
+            <span class="keyword">const</span> numbers = [1, 2, 3];<br>
+            <span class="keyword">const</span> newNumbers = [...numbers, 4]; <span class="comment">// Not modifying original</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Pure Function</code> - <span class="highlight">Fungsi yang selalu menghasilkan output sama untuk input sama</span><br>
+          • <code>Higher-Order Function</code> - <strong>Fungsi yang menerima/mengembalikan fungsi lain</strong><br>
+          • <code>Immutable Data</code> - <strong>Data yang tidak bisa diubah setelah dibuat</strong><br>
+          • <code>First-Class Functions</code> - <strong>Fungsi diperlakukan seperti variabel biasa</strong><br>
+          • <code>Function Composition</code> - <strong>Menggabungkan fungsi untuk operasi kompleks</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>fp-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Currying</span><br>
+            <span class="keyword">const</span> <span class="function">curryAdd</span> = a => b => a + b;<br>
+            <span class="keyword">const</span> addFive = <span class="function">curryAdd</span>(5);<br>
+            <span class="function">addFive</span>(3); <span class="comment">// 8</span><br><br>
+            
+            <span class="comment">// Function Composition</span><br>
+            <span class="keyword">const</span> <span class="function">compose</span> = (f, g) => x => <span class="function">f</span>(<span class="function">g</span>(x));<br>
+            <span class="keyword">const</span> toUpperCase = str => str.<span class="function">toUpperCase</span>();<br>
+            <span class="keyword">const</span> exclaim = str => `${str}!`;<br>
+            <span class="keyword">const</span> shout = <span class="function">compose</span>(exclaim, toUpperCase);<br><br>
+            
+            <span class="comment">// Recursion</span><br>
+            <span class="keyword">function</span> <span class="function">factorial</span>(n) {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> n <= 1 ? 1 : n * <span class="function">factorial</span>(n - 1);<br>
+              }
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Keuntungan FP</h4>
+        <p>Kode lebih mudah diprediksi, di-test, dan di-debug karena tidak ada side effects. Juga memudahkan parallel processing dan code reuse.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>fp-concepts.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Array Methods (FP Style)</span><br>
+            <span class="keyword">const</span> numbers = [1, 2, 3, 4, 5];<br><br>
+            
+            <span class="comment">// Map (Transform)</span><br>
+            numbers.<span class="function">map</span>(n => n * 2); <span class="comment">// [2, 4, 6, 8, 10]</span><br><br>
+            
+            <span class="comment">// Filter (Select)</span><br>
+            numbers.<span class="function">filter</span>(n => n % 2 === 0); <span class="comment">// [2, 4]</span><br><br>
+            
+            <span class="comment">// Reduce (Accumulate)</span><br>
+            numbers.<span class="function">reduce</span>((acc, n) => acc + n, 0); <span class="comment">// 15</span><br><br>
+            
+            <span class="comment">// Chaining</span><br>
+            numbers<br>
+            &nbsp;&nbsp;.<span class="function">filter</span>(n => n > 2)<br>
+            &nbsp;&nbsp;.<span class="function">map</span>(n => n * 3)<br>
+            &nbsp;&nbsp;.<span class="function">reduce</span>((acc, n) => acc + n, 0); <span class="comment">// 36</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Map</strong> - Membuat array baru dengan transformasi tiap elemen<br>
+          • <strong>Filter</strong> - Membuat array baru hanya dengan elemen yang memenuhi kondisi<br>
+          • <strong>Reduce</strong> - Menggabungkan semua elemen menjadi single value<br>
+          • <span class="highlight">Method Chaining</span> memungkinkan operasi berurutan tanpa variabel intermediate<br>
+          • Semua method ini tidak mengubah array asli (immutable)
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-fp.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Functors</span><br>
+            <span class="keyword">const</span> Box = x => ({<br>
+            &nbsp;&nbsp;<span class="function">map</span>: f => Box(<span class="function">f</span>(x)),<br>
+            &nbsp;&nbsp;<span class="function">fold</span>: f => <span class="function">f</span>(x),<br>
+            &nbsp;&nbsp;<span class="function">inspect</span>: () => `Box(${x})`<br>
+            });<br><br>
+            
+            <span class="comment">// Monads</span><br>
+            <span class="keyword">const</span> Right = x => ({<br>
+            &nbsp;&nbsp;<span class="function">map</span>: f => Right(<span class="function">f</span>(x)),<br>
+            &nbsp;&nbsp;<span class="function">fold</span>: (f, g) => <span class="function">g</span>(x)<br>
+            });<br><br>
+            
+            <span class="comment">// Lenses</span><br>
+            <span class="keyword">const</span> <span class="function">lens</span> = (getter, setter) => ({<br>
+            &nbsp;&nbsp;<span class="function">get</span>: obj => <span class="function">getter</span>(obj),<br>
+            &nbsp;&nbsp;<span class="function">set</span>: (val, obj) => <span class="function">setter</span>(val, obj)<br>
+            });
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Advanced FP Concepts</h4>
+        <p>Functors adalah container yang bisa di-mapping. Monads menangani efek samping dan komposisi. Lenses memungkinkan immutability dengan update bersarang.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices FP</h4>
+        <p>Mulai dengan fungsi kecil dan pure, hindari mutasi data, gunakan higher-order functions, dan komposisi daripada inheritance.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>fp-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Pure, small, composable</span><br>
+            <span class="keyword">const</span> <span class="function">calculateTotal</span> = items =><br>
+            &nbsp;&nbsp;items<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">map</span>(item => item.price * item.quantity)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">reduce</span>((acc, price) => acc + price, 0);<br><br>
+            
+            <span class="comment">// ❌ Avoid - Impure, mutable</span><br>
+            <span class="keyword">let</span> total = 0;<br>
+            <span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < items.length; i++) {<br>
+              &nbsp;&nbsp;total += items[i].price * items[i].quantity;<br>
+              }<br><br>
+              
+              <span class="comment">// ✅ Better - Point-free style</span><br>
+              <span class="keyword">const</span> <span class="function">doubleAll</span> = <span class="function">map</span>(n => n * 2);<br>
+              <span class="keyword">const</span> <span class="function">sumAll</span> = <span class="function">reduce</span>((acc, n) => acc + n, 0);<br>
+              <span class="keyword">const</span> <span class="function">processNumbers</span> = <span class="function">compose</span>(sumAll, doubleAll);
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan pure functions</strong> - Lebih mudah diprediksi dan di-test<br>
+          • <strong>Hindari side effects</strong> - Minimalkan interaksi dengan dunia luar dalam fungsi<br>
+          • <strong>Immutability</strong> - Gunakan spread operator, map, filter daripada push/splice<br>
+          • <strong>Function composition</strong> - Gabungkan fungsi kecil menjadi operasi kompleks<br>
+          • <strong>Declarative over imperative</strong> - Fokus pada "what" bukan "how"
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Library FP JavaScript</h4>
+        <p>Beberapa library populer untuk FP di JavaScript: Ramda, Lodash/fp, Immutable.js, Sanctuary, Folktale.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>Mostly Adequate Guide</strong> - Buku FP gratis oleh Professor Frisby<br>
+          • <strong>Functional Light JavaScript</strong> - Kyle Simpson<br>
+          • <strong>Ramda Documentation</strong> - Dokumentasi library FP Ramda<br>
+          • <strong>Fantasy Land Spec</strong> - Spesifikasi algebraic JavaScript<br>
+          • <strong>Functional Programming Jargon</strong> - Glosarium istilah FP
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

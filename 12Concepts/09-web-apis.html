@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Web APIs</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Web APIs JavaScript</h1>
+    <p>Panduan lengkap Web APIs modern untuk pengembangan aplikasi web</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Web APIs</h4>
+        <p>Web APIs adalah antarmuka pemrograman yang disediakan browser untuk berinteraksi dengan fitur browser dan sistem operasi. Ini berbeda dari JavaScript inti (ECMAScript).</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>dom-api.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// DOM Manipulation</span><br>
+            <span class="keyword">const</span> button = <span class="function">document</span>.<span class="function">querySelector</span>(<span class="string">'#myButton'</span>);<br>
+            button.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Button clicked!'</span>);<br>
+            });<br><br>
+            
+            <span class="comment">// Fetch API</span><br>
+            <span class="function">fetch</span>(<span class="string">'https://api.example.com/data'</span>)<br>
+            &nbsp;&nbsp;.<span class="function">then</span>(response => response.<span class="function">json</span>())<br>
+            &nbsp;&nbsp;.<span class="function">then</span>(data => <span class="function">console</span>.<span class="function">log</span>(data))<br>
+            &nbsp;&nbsp;.<span class="function">catch</span>(error => <span class="function">console</span>.<span class="function">error</span>(<span class="string">'Error:'</span>, error));
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>DOM API</code> - <span class="highlight">Untuk manipulasi elemen HTML</span><br>
+          • <code>Fetch API</code> - <strong>Untuk permintaan jaringan (HTTP requests)</strong><br>
+          • <code>Web Storage</code> - <strong>Penyimpanan lokal (localStorage, sessionStorage)</strong><br>
+          • <code>Geolocation</code> - <strong>Akses lokasi pengguna</strong><br>
+          • <code>Canvas</code> - <strong>Untuk menggambar grafis secara dinamis</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>web-apis.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Local Storage</span><br>
+            <span class="function">localStorage</span>.<span class="function">setItem</span>(<span class="string">'username'</span>, <span class="string">'JohnDoe'</span>);<br>
+            <span class="keyword">const</span> user = <span class="function">localStorage</span>.<span class="function">getItem</span>(<span class="string">'username'</span>);<br><br>
+            
+            <span class="comment">// Geolocation</span><br>
+            <span class="function">navigator</span>.<span class="property">geolocation</span>.<span class="function">getCurrentPosition</span>(<br>
+            &nbsp;&nbsp;(position) => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Latitude:'</span>, position.<span class="property">coords</span>.<span class="property">latitude</span>);<br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;(error) => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(<span class="string">'Error getting location:'</span>, error);<br>
+            &nbsp;&nbsp;}<br>
+            );<br><br>
+            
+            <span class="comment">// Service Workers</span><br>
+            <span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> <span class="function">navigator</span>) {<br>
+            &nbsp;&nbsp;<span class="function">navigator</span>.<span class="property">serviceWorker</span>.<span class="function">register</span>(<span class="string">'/sw.js'</span>);<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Jenis Web APIs</h4>
+        <p>Browser menyediakan berbagai Web APIs: DOM, Fetch, Web Storage, Geolocation, Canvas, Web Audio, WebRTC, Service Workers, dan banyak lagi.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>apis-comparison.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Perbandingan Storage APIs</span><br>
+            <span class="class">Cookies</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 4KB, dikirim ke server, kadaluarsa</span><br>
+            <span class="class">localStorage</span> &nbsp;<span class="comment">// 5-10MB, persisten, hanya client-side</span><br>
+            <span class="class">sessionStorage</span> <span class="comment">// 5-10MB, hilang saat tab ditutup</span><br>
+            <span class="class">IndexedDB</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// &gt;50MB, database NoSQL client-side</span><br><br>
+            
+            <span class="comment">// Perbandingan Request APIs</span><br>
+            <span class="class">XMLHttpRequest</span> &nbsp;<span class="comment">// Legacy, callback-based</span><br>
+            <span class="class">Fetch API</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Modern, promise-based</span><br>
+            <span class="class">Axios</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Library populer, fitur tambahan</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Storage APIs</strong> - Untuk penyimpanan data di browser<br>
+          • <strong>Cookies</strong> - Kecil (4KB), selalu dikirim ke server dengan permintaan<br>
+          • <strong>Web Storage</strong> - Lebih besar (5-10MB), hanya diakses di client-side<br>
+          • <span class="highlight">IndexedDB</span> - Untuk penyimpanan data terstruktur dalam jumlah besar<br>
+          • <strong>Fetch API</strong> - Pengganti modern untuk XMLHttpRequest
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-apis.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Web Workers</span><br>
+            <span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="class">Worker</span>(<span class="string">'worker.js'</span>);<br>
+            worker.<span class="function">postMessage</span>(<span class="string">'Start processing'</span>);<br>
+            worker.<span class="function">onmessage</span> = (e) => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Message from worker:'</span>, e.<span class="property">data</span>);<br>
+            };<br><br>
+            
+            <span class="comment">// WebSocket</span><br>
+            <span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="class">WebSocket</span>(<span class="string">'wss://example.com/socket'</span>);<br>
+            socket.<span class="function">onopen</span> = () => {<br>
+            &nbsp;&nbsp;socket.<span class="function">send</span>(<span class="string">'Hello Server!'</span>);<br>
+            };<br>
+            socket.<span class="function">onmessage</span> = (e) => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Message from server:'</span>, e.<span class="property">data</span>);<br>
+            };<br><br>
+            
+            <span class="comment">// Intersection Observer</span><br>
+            <span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="class">IntersectionObserver</span>((entries) => {<br>
+            &nbsp;&nbsp;entries.<span class="function">forEach</span>(entry => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (entry.<span class="property">isIntersecting</span>) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.<span class="property">target</span>.<span class="property">classList</span>.<span class="function">add</span>(<span class="string">'visible'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;});<br>
+            });<br>
+            observer.<span class="function">observe</span>(<span class="function">document</span>.<span class="function">querySelector</span>(<span class="string">'.lazy-load'</span>));
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Web APIs Canggih</h4>
+        <p>Web Workers untuk multithreading, WebSocket untuk komunikasi real-time, Intersection Observer untuk deteksi elemen yang terlihat, dan banyak API modern lainnya.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices Web APIs</h4>
+        <p>Selalu periksa dukungan browser, gunakan polyfill untuk API baru, tangani error dengan baik, dan optimalkan performa.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>api-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Feature detection</span><br>
+            <span class="keyword">if</span> (<span class="string">'IntersectionObserver'</span> <span class="keyword">in</span> <span class="function">window</span>) {<br>
+            &nbsp;&nbsp;<span class="comment">// Gunakan IntersectionObserver</span><br>
+            } <span class="keyword">else</span> {<br>
+            &nbsp;&nbsp;<span class="comment">// Fallback untuk browser lama</span><br>
+            }<br><br>
+            
+            <span class="comment">// ❌ Avoid - Asumsi API selalu tersedia</span><br>
+            <span class="function">navigator</span>.<span class="property">geolocation</span>.<span class="function">getCurrentPosition</span>(callback);<br>
+            <span class="comment">// Bisa error jika geolocation tidak didukung</span><br><br>
+            
+            <span class="comment">// ✅ Better - Error handling</span><br>
+            <span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;<span class="keyword">const</span> mediaStream = <span class="keyword">await</span> <span class="function">navigator</span>.<span class="property">mediaDevices</span>.<span class="function">getUserMedia</span>({<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;video: <span class="keyword">true</span><br>
+            &nbsp;&nbsp;});<br>
+            } <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(<span class="string">'Error accessing camera:'</span>, error);<br>
+            &nbsp;&nbsp;<span class="comment">// Tampilkan pesan ke pengguna</span><br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Feature detection</strong> - Selalu periksa dukungan browser sebelum menggunakan API<br>
+          • <strong>Error handling</strong> - Tangani error dengan baik untuk pengalaman pengguna yang lebih baik<br>
+          • <strong>Performance</strong> - Web Workers untuk tugas berat, debounce/throttle untuk event handlers<br>
+          • <strong>Security</strong> - Batasi akses API sensitif (seperti kamera/lokasi)<br>
+          • <strong>Privacy</strong> - Beri tahu pengguna saat mengakses data pribadi<br>
+          • <strong>Polyfills</strong> - Gunakan untuk API baru di browser lama
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Tools untuk Web APIs</h4>
+        <p>Beberapa tools berguna: Can I Use (kompatibilitas browser), MDN Web Docs (dokumentasi), Polyfill.io (polyfill service), dan Web API Manager untuk testing.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>MDN Web APIs</strong> - Dokumentasi resmi Mozilla<br>
+          • <strong>Web.dev</strong> - Panduan modern dari Google<br>
+          • <strong>Can I Use</strong> - Tabel kompatibilitas browser<br>
+          • <strong>Web Platform Tests</strong> - Test suite untuk Web APIs<br>
+          • <strong>Browser Compatibility Data</strong> - Data dukungan browser terkini
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

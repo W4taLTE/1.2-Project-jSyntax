@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimental JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Experimental JavaScript</h1>
+    <p>Fitur-fitur eksperimental JavaScript yang mungkin menjadi standar di masa depan</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Fitur Eksperimental</h4>
+        <p>Fitur eksperimental adalah proposal JavaScript yang sedang dalam tahap pengembangan dan belum menjadi bagian dari standar ECMAScript resmi. Beberapa mungkin memerlukan flag khusus di browser.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>experimental.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Pipeline Operator (Proposal)</span><br>
+            <span class="keyword">const</span> result = x<br>
+            &nbsp;&nbsp;|> <span class="function">double</span><br>
+            &nbsp;&nbsp;|> <span class="function">increment</span><br>
+            &nbsp;&nbsp;|> <span class="function">square</span>;<br><br>
+            
+            <span class="comment">// Record & Tuple (Stage 2)</span><br>
+            <span class="keyword">const</span> record = #{
+            &nbsp;&nbsp;name: <span class="string">"John"</span>,
+            &nbsp;&nbsp;age: 30
+            };<br>
+            <span class="keyword">const</span> tuple = #[1, 2, 3];
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Pipeline Operator (|>)</code> - <span class="highlight">Operator untuk komposisi fungsi</span><br>
+          • <code>Record & Tuple</code> - <strong>Struktur data immutable baru</strong><br>
+          • <code>Decorators</code> - <strong>Modifikasi perilaku class dan method</strong><br>
+          • <code>Pattern Matching</code> - <strong>Pencocokan pola seperti bahasa fungsional</strong><br>
+          • <code>Top-level await</code> - <strong>Await di luar fungsi async (sudah distandarkan)</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>experimental-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Decorators (Stage 3)</span><br>
+            @<span class="function">serializable</span><br>
+            <span class="keyword">class</span> <span class="class">User</span> {<br>
+            &nbsp;&nbsp;@<span class="function">observable</span><br>
+            &nbsp;&nbsp;name = <span class="string">''</span>;<br><br>
+            
+            &nbsp;&nbsp;@<span class="function">bound</span><br>
+            &nbsp;&nbsp;<span class="function">sayHello</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">`Hello, <span class="hljs-subst">${<span class="keyword">this</span>.name}</span>`</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// Pattern Matching (Stage 1)</span><br>
+            <span class="keyword">const</span> res = <span class="keyword">match</span> (response) {<br>
+            &nbsp;&nbsp;<span class="keyword">when</span> { status: 200, body } => <span class="function">processBody</span>(body),<br>
+            &nbsp;&nbsp;<span class="keyword">when</span> { status: 404 } => <span class="function">logError</span>(<span class="string">'Not found'</span>),<br>
+            &nbsp;&nbsp;<span class="keyword">when</span> { status } <span class="keyword">if</span> (status >= 400) => <span class="function">logError</span>(<span class="string">'Error'</span>),<br>
+            &nbsp;&nbsp;_ => <span class="function">logError</span>(<span class="string">'Unknown response'</span>)<br>
+            };
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Tahapan Proposal TC39</h4>
+        <p>Stage 0: Strawman, Stage 1: Proposal, Stage 2: Draft, Stage 3: Candidate, Stage 4: Finished. Hanya Stage 4 yang masuk standar ECMAScript.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>proposal-status.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Status Proposal Populer</span><br>
+            <span class="class">Decorators</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Stage 3</span><br>
+            <span class="class">Pipeline Operator</span> &nbsp;<span class="comment">// Stage 2</span><br>
+            <span class="class">Record & Tuple</span> &nbsp;&nbsp;&nbsp;<span class="comment">// Stage 2</span><br>
+            <span class="class">Pattern Matching</span> &nbsp;<span class="comment">// Stage 1</span><br>
+            <span class="class">Throw Expressions</span> &nbsp;<span class="comment">// Stage 2</span><br><br>
+            
+            <span class="comment">// Fitur yang Sudah Distandarkan</span><br>
+            <span class="class">Optional Chaining</span> &nbsp;<span class="comment">// ES2020</span><br>
+            <span class="class">Nullish Coalescing</span> &nbsp;<span class="comment">// ES2020</span><br>
+            <span class="class">Top-level await</span> &nbsp;&nbsp;&nbsp;<span class="comment">// ES2022</span><br>
+            <span class="class">Private Class Fields</span> <span class="comment">// ES2022</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Stage 0</strong> - Ide awal, belum formal<br>
+          • <strong>Stage 1</strong> - Proposal formal dengan use case<br>
+          • <strong>Stage 2</strong> - Draft spesifikasi awal<br>
+          • <span class="highlight">Stage 3</span> - Spesifikasi matang, menunggu implementasi<br>
+          • <strong>Stage 4</strong> - Siap untuk dimasukkan dalam standar<br>
+          • <strong>ES20XX</strong> - Telah menjadi bagian standar ECMAScript
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-experimental.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Partial Application (Stage 1)</span><br>
+            <span class="keyword">function</span> <span class="function">add</span>(a, b, c) { <span class="keyword">return</span> a + b + c; }<br>
+            <span class="keyword">const</span> addOne = <span class="function">add</span>(1, ?, ?); <span class="comment">// Partial application</span><br>
+            <span class="function">addOne</span>(2, 3); <span class="comment">// 6</span><br><br>
+            
+            <span class="comment">// Do Expressions (Stage 1)</span><br>
+            <span class="keyword">const</span> result = <span class="keyword">do</span> {
+            &nbsp;&nbsp;<span class="keyword">const</span> x = <span class="function">computeValue</span>();
+            &nbsp;&nbsp;<span class="keyword">const</span> y = x * 2;
+            &nbsp;&nbsp;<span class="keyword">if</span> (y > 10) <span class="string">'large'</span>;
+            &nbsp;&nbsp;<span class="keyword">else</span> <span class="string">'small'</span>;
+            };<br><br>
+            
+            <span class="comment">// Temporal (Stage 3)</span><br>
+            <span class="keyword">const</span> date = <span class="keyword">new</span> <span class="class">Temporal</span>.<span class="class">PlainDate</span>(2023, 10, 15);<br>
+            <span class="keyword">const</span> nextWeek = date.<span class="function">add</span>({ days: 7 });
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Fitur Lanjutan</h4>
+        <p>Partial Application untuk currying yang lebih mudah, Do Expressions untuk blok ekspresi, Temporal API untuk manipulasi tanggal yang lebih baik, dan banyak proposal lainnya.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Gunakan fitur eksperimental dengan hati-hati, selalu siapkan fallback, dan pantau perkembangan proposal sebelum mengadopsinya di produksi.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>experimental-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Gunakan dengan transpiler</span><br>
+            <span class="comment">// Babel/TypeScript bisa mengkompilasi ke kode ES standar</span><br>
+            @<span class="function">deprecated</span><br>
+            <span class="keyword">class</span> <span class="class">OldClass</span> {}<br><br>
+            
+            <span class="comment">// ❌ Avoid - Gunakan langsung di produksi</span><br>
+            <span class="comment">// Fitur mungkin berubah atau dihapus</span><br>
+            <span class="keyword">const</span> x = #[1, 2, 3]; <span class="comment">// Tanpa fallback</span><br><br>
+            
+            <span class="comment">// ✅ Better - Deteksi fitur + fallback</span><br>
+            <span class="keyword">const</span> <span class="function">safePipeline</span> = (value, ...fns) => {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (<span class="string">'|>'</span> <span class="keyword">in</span> <span class="function">Symbol</span>) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> value |> ...fns;<br>
+            &nbsp;&nbsp;} <span class="keyword">else</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> fns.<span class="function">reduce</span>((acc, fn) => <span class="function">fn</span>(acc), value);<br>
+            &nbsp;&nbsp;}<br>
+            };
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan transpiler</strong> - Babel/TypeScript untuk kompatibilitas<br>
+          • <strong>Deteksi fitur</strong> - Periksa ketersediaan sebelum digunakan<br>
+          • <strong>Siapkan fallback</strong> - Implementasi alternatif untuk browser lama<br>
+          • <strong>Pantau perkembangan</strong> - Proposal bisa berubah atau dibatalkan<br>
+          • <strong>Hanya untuk development</strong> - Hindari di produksi kecuali Stage 4<br>
+          • <strong>Dokumentasikan</strong> - Beri tahu tim tentang penggunaan eksperimental
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Sumber Daya Proposal</h4>
+        <p>TC39 Proposal Repository, Babel Plugin, Kompatibilitas Browser, dan berbagai artikel tentang fitur JavaScript masa depan.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>tc39.github.io</strong> - Repositori resmi proposal TC39<br>
+          • <strong>Babel Proposal Plugins</strong> - Untuk mencoba fitur eksperimental<br>
+          • <strong>ECMAScript Daily</strong> - Update perkembangan terbaru<br>
+          • <strong>Can I Use</strong> - Tabel kompatibilitas fitur<br>
+          • <strong>JavaScript Weekly</strong> - Newsletter dengan update proposal
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

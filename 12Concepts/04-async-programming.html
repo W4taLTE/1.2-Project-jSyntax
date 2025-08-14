@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Programming JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 Async Programming</h1>
+    <p>Panduan lengkap Async Programming di JavaScript untuk pengembangan web modern</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Async Programming</h4>
+        <p>Async Programming adalah cara untuk menangani operasi yang membutuhkan waktu, seperti fetching data atau membaca file, tanpa memblokir eksekusi kode lainnya.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>async-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Callback</span><br>
+            <span class="function">function</span> <span class="name">fetchData</span>(<span class="param">callback</span>) {<br>
+            &nbsp;&nbsp;<span class="function">setTimeout</span>(() => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">callback</span>(<span class="string">'Data fetched!'</span>);<br>
+            &nbsp;&nbsp;}, <span class="number">1000</span>);<br>
+            }<br><br>
+            
+            <span class="comment">// Promise</span><br>
+            <span class="function">function</span> <span class="name">fetchDataPromise</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="function">Promise</span>((<span class="param">resolve</span>, <span class="param">reject</span>) => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">setTimeout</span>(() => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">resolve</span>(<span class="string">'Data fetched with Promise!'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}, <span class="number">1000</span>);<br>
+            &nbsp;&nbsp;});<br>
+            }<br><br>
+            
+            <span class="comment">// Async/Await</span><br>
+            <span class="keyword">async</span> <span class="function">function</span> <span class="name">fetchDataAsync</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">const</span> data = <span class="keyword">await</span> <span class="function">fetchDataPromise</span>();<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(data);<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>Callback</code> - Fungsi yang dipanggil setelah operasi selesai<br>
+          • <code>Promise</code> - Objek yang merepresentasikan hasil (atau kegagalan) dari operasi async<br>
+          • <code>Async/Await</code> - Sintaks modern untuk menangani Promise dengan cara yang lebih bersih dan mudah dibaca
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>async-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Error Handling with Promises</span><br>
+            <span class="function">fetchDataPromise</span>()<br>
+            &nbsp;&nbsp;.<span class="function">then</span>(data => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(data);<br>
+            &nbsp;&nbsp;})<br>
+            &nbsp;&nbsp;.<span class="function">catch</span>(error => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(error);<br>
+            &nbsp;&nbsp;});<br><br>
+            
+            <span class="comment">// Error Handling with Async/Await</span><br>
+            <span class="keyword">async</span> <span class="function">function</span> <span class="name">fetchDataWithErrorHandling</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> data = <span class="keyword">await</span> <span class="function">fetchDataPromise</span>();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(data);<br>
+            &nbsp;&nbsp;} <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(error);<br>
+            &nbsp;&nbsp;}<br>
+            }
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Browser Support</h4>
+        <p>Async/Await didukung penuh oleh semua browser modern (Chrome 55+, Firefox 52+, Safari 10.1+, Edge 15+).</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>async-tables.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Comparison of Async Methods</span><br>
+            <span class="tag">Callback</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Simple but can lead to "callback hell" */</span><br>
+            <span class="tag">Promise</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Better than callbacks, but can be verbose */</span><br>
+            <span class="tag">Async/Await</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Clean and easy to read, modern approach */</span><br><br>
+            
+            <span class="comment">// Common Patterns</span><br>
+            <span class="tag">Promise.all</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Run multiple promises in parallel */</span><br>
+            <span class="tag">Promise.race</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* Resolve/reject as soon as one promise settles */</span><br>
+            <span class="tag">Promise.allSettled</span> <span class="comment">/* Wait for all promises to settle */</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Callback</strong> - Cocok untuk operasi sederhana, tetapi dapat menyebabkan "callback hell"<br>
+          • <strong>Promise</strong> - Lebih baik daripada callback, tetapi bisa menjadi verbose<br>
+          • <strong>Async/Await</span> - Pendekatan modern yang bersih dan mudah dibaca
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>async-advanced.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Using Promise.all</span><br>
+            <span class="keyword">const</span> [data1, data2] = <span class="keyword">await</span> <span class="function">Promise.all</span>([<br>
+            &nbsp;&nbsp;<span class="function">fetchDataPromise</span>(),<br>
+            &nbsp;&nbsp;<span class="function">fetchAnotherDataPromise</span>()<br>
+            ]);<br><br>
+            
+            <span class="comment">// Using Promise.race</span><br>
+            <span class="keyword">const</span> winner = <span class="keyword">await</span> <span class="function">Promise.race</span>([<br>
+            &nbsp;&nbsp;<span class="function">fetchDataPromise</span>(),<br>
+            &nbsp;&nbsp;<span class="function">fetchAnotherDataPromise</span>()<br>
+            ]);<br><br>
+            
+            <span class="comment">// Using Promise.allSettled</span><br>
+            <span class="keyword">const</span> results = <span class="keyword">await</span> <span class="function">Promise.allSettled</span>([<br>
+            &nbsp;&nbsp;<span class="function">fetchDataPromise</span>(),<br>
+            &nbsp;&nbsp;<span class="function">fetchAnotherDataPromise</span>()<br>
+            ]);
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Browser Support</h4>
+        <p>Promise.all, Promise.race, dan Promise.allSettled didukung penuh oleh semua browser modern (Chrome 32+, Firefox 29+, Safari 8+, Edge 12+).</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices</h4>
+        <p>Gunakan Async/Await untuk kode yang lebih bersih dan mudah dibaca, dan selalu tangani error dengan try/catch.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>async-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Clean and readable</span><br>
+            <span class="keyword">async</span> <span class="function">function</span> <span class="name">fetchUserData</span>() {<br>
+            &nbsp;&nbsp;<span class="keyword">try</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> user = <span class="keyword">await</span> <span class="function">fetchUser</span>();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="function">fetchPosts</span>(user.id);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(posts);<br>
+            &nbsp;&nbsp;} <span class="keyword">catch</span> (error) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(error);<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            
+            <span class="comment">// ❌ Avoid - Nested Promises</span><br>
+            <span class="function">fetchUser</span>()<br>
+            &nbsp;&nbsp;.<span class="function">then</span>(user => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">fetchPosts</span>(user.id)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">then</span>(posts => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(posts);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="function">catch</span>(error => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(error);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &nbsp;&nbsp;})<br>
+            &nbsp;&nbsp;.<span class="function">catch</span>(error => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">console</span>.<span class="function">error</span>(error);<br>
+            &nbsp;&nbsp;});
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Keep it simple</strong> - Gunakan Async/Await untuk kode yang lebih bersih<br>
+          • <strong>Avoid nested promises</strong> - Hindari "callback hell" dengan Async/Await<br>
+          • <strong>Error handling</strong> - Selalu tangani error dengan try/catch<br>
+          • <strong>Parallel execution</strong> - Gunakan Promise.all untuk menjalankan beberapa operasi async secara paralel
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

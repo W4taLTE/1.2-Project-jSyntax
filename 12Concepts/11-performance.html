@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Performance</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>📛 JavaScript Performance</h1>
+    <p>Panduan optimasi performa JavaScript untuk aplikasi web yang cepat</p>
+  </header>
+  
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">
+        <span>📌</span>
+        <span>Elements</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>💡 Dasar Performa JavaScript</h4>
+        <p>Optimasi performa adalah praktik membuat aplikasi JavaScript berjalan lebih cepat dan efisien dengan mengurangi waktu eksekusi, penggunaan memori, dan konsumsi sumber daya.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>performance-basics.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Mengukur waktu eksekusi</span><br>
+            <span class="function">console</span>.<span class="function">time</span>(<span class="string">'loop'</span>);<br>
+            <span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 1000000; i++) {<br>
+              &nbsp;&nbsp;<span class="comment">// Operasi yang diukur</span><br>
+              }<br>
+              <span class="function">console</span>.<span class="function">timeEnd</span>(<span class="string">'loop'</span>);<br><br>
+              
+              <span class="comment">// Mengurangi operasi DOM</span><br>
+              <span class="keyword">const</span> fragment = <span class="function">document</span>.<span class="function">createDocumentFragment</span>();<br>
+              <span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 100; i++) {<br>
+                &nbsp;&nbsp;<span class="keyword">const</span> div = <span class="function">document</span>.<span class="function">createElement</span>(<span class="string">'div'</span>);<br>
+                &nbsp;&nbsp;fragment.<span class="function">appendChild</span>(div);<br>
+                }<br>
+                <span class="function">document</span>.<span class="property">body</span>.<span class="function">appendChild</span>(fragment);
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <code>console.time()</code> - <span class="highlight">Mengukur waktu eksekusi kode</span><br>
+          • <code>DocumentFragment</code> - <strong>Mengelompokkan operasi DOM untuk mengurangi reflow</strong><br>
+          • <code>debounce/throttle</code> - <strong>Mengoptimalkan event handlers yang sering dipanggil</strong><br>
+          • <code>Web Workers</code> - <strong>Menjalankan tugas berat di thread terpisah</strong><br>
+          • <code>Lazy loading</code> - <strong>Menunda pemuatan sumber daya yang tidak kritis</strong>
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🛠️</span>
+        <span>Features</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>performance-features.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Debounce untuk event scroll/resize</span><br>
+            <span class="keyword">function</span> <span class="function">debounce</span>(func, delay) {<br>
+            &nbsp;&nbsp;<span class="keyword">let</span> timeoutId;<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">function</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">clearTimeout</span>(timeoutId);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;timeoutId = <span class="function">setTimeout</span>(() => <span class="function">func</span>.<span class="function">apply</span>(<span class="keyword">this</span>, arguments), delay);<br>
+            &nbsp;&nbsp;};<br>
+            }<br>
+            <span class="function">window</span>.<span class="function">addEventListener</span>(<span class="string">'resize'</span>, <span class="function">debounce</span>(() => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Resize handler'</span>);<br>
+            }, 200));<br><br>
+            
+            <span class="comment">// Web Worker untuk tugas berat</span><br>
+            <span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="class">Worker</span>(<span class="string">'worker.js'</span>);<br>
+            worker.<span class="function">postMessage</span>({ data: largeData });<br>
+            worker.<span class="function">onmessage</span> = (e) => {<br>
+            &nbsp;&nbsp;<span class="function">console</span>.<span class="function">log</span>(<span class="string">'Result from worker:'</span>, e.<span class="property">data</span>);<br>
+            };
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Teknik Optimasi</h4>
+        <p>Beberapa teknik penting: minimifikasi kode, code splitting, caching, menggunakan algoritma yang efisien, dan menghindari memory leaks.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>📊</span>
+        <span>Basic Tables</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>performance-comparison.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Perbandingan Loop Performance (ops/detik)</span><br>
+            <span class="class">for</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 1,000,000 (tercepat)</span><br>
+            <span class="class">forEach</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 800,000</span><br>
+            <span class="class">for...of</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 600,000</span><br>
+            <span class="class">while</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 950,000</span><br>
+            <span class="class">map</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// 500,000 (terlambat)</span><br><br>
+            
+            <span class="comment">// Perbandingan Query Selector</span><br>
+            <span class="class">getElementById</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Tercepat</span><br>
+            <span class="class">querySelector</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Cepat</span><br>
+            <span class="class">getElementsByClassName</span> <span class="comment">// Cepat</span><br>
+            <span class="class">querySelectorAll</span> &nbsp;&nbsp;&nbsp;<span class="comment">// Sedang</span><br>
+            <span class="class">getElementsByTagName</span> &nbsp;<span class="comment">// Sedang</span>
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Loop Performance</strong> - For loop tradisional umumnya paling cepat<br>
+          • <strong>DOM Queries</strong> - getElementById lebih cepat daripada querySelector<br>
+          • <span class="highlight">Event Delegation</span> mengurangi jumlah event listeners<br>
+          • <strong>Memory Usage</strong> - Hindari menyimpan referensi yang tidak perlu<br>
+          • <strong>Garbage Collection</strong> - Variabel global bertahan lebih lama
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🚀</span>
+        <span>Advanced Table</span>
+      </h2>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>advanced-performance.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// Virtual DOM dengan DocumentFragment</span><br>
+            <span class="keyword">function</span> <span class="function">updateUI</span>(data) {<br>
+            &nbsp;&nbsp;<span class="keyword">const</span> fragment = <span class="function">document</span>.<span class="function">createDocumentFragment</span>();<br>
+            &nbsp;&nbsp;data.<span class="function">forEach</span>(item => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> div = <span class="function">document</span>.<span class="function">createElement</span>(<span class="string">'div'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;div.<span class="property">textContent</span> = item.<span class="property">name</span>;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;fragment.<span class="function">appendChild</span>(div);<br>
+            &nbsp;&nbsp;});<br>
+            &nbsp;&nbsp;<span class="function">document</span>.<span class="property">body</span>.<span class="property">textContent</span> = <span class="string">''</span>;<br>
+            &nbsp;&nbsp;<span class="function">document</span>.<span class="property">body</span>.<span class="function">appendChild</span>(fragment);<br>
+            }<br><br>
+            
+            <span class="comment">// Memoization untuk optimasi fungsi</span><br>
+            <span class="keyword">function</span> <span class="function">memoize</span>(fn) {<br>
+            &nbsp;&nbsp;<span class="keyword">const</span> cache = {};<br>
+            &nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">function</span>(...args) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> key = <span class="function">JSON</span>.<span class="function">stringify</span>(args);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (cache[key]) <span class="keyword">return</span> cache[key];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span> result = <span class="function">fn</span>.<span class="function">apply</span>(<span class="keyword">this</span>, args);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cache[key] = result;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> result;<br>
+            &nbsp;&nbsp;};<br>
+            }<br>
+            <span class="keyword">const</span> <span class="function">factorial</span> = <span class="function">memoize</span>(n => n <= 1 ? 1 : n * <span class="function">factorial</span>(n - 1));
+          </code>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <h4>ℹ️ Teknik Lanjutan</h4>
+        <p>Virtual DOM, memoization, algoritma caching, web assembly, service workers untuk caching offline, dan teknik rendering progresif.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>💡</span>
+        <span>Pro Tips</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>🎯 Best Practices Performa</h4>
+        <p>Ukur sebelum mengoptimasi, fokus pada bottleneck, gunakan tools profiling, optimalkan critical rendering path, dan hindari premature optimization.</p>
+      </div>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <div class="code-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <span>performance-tips.js</span>
+        </div>
+        <div class="code-block">
+          <code>
+            <span class="comment">// ✅ Good - Event delegation</span><br>
+            <span class="function">document</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, (e) => {<br>
+            &nbsp;&nbsp;<span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">matches</span>(<span class="string">'.btn'</span>)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">handleClick</span>(e.<span class="property">target</span>);<br>
+            &nbsp;&nbsp;}<br>
+            });<br><br>
+            
+            <span class="comment">// ❌ Avoid - Banyak event listeners</span><br>
+            <span class="function">document</span>.<span class="function">querySelectorAll</span>(<span class="string">'.btn'</span>).<span class="function">forEach</span>(btn => {<br>
+            &nbsp;&nbsp;btn.<span class="function">addEventListener</span>(<span class="string">'click'</span>, <span class="function">handleClick</span>);<br>
+            });<br><br>
+            
+            <span class="comment">// ✅ Better - RequestAnimationFrame untuk animasi</span><br>
+            <span class="keyword">function</span> <span class="function">animate</span>() {<br>
+            &nbsp;&nbsp;<span class="comment">// Kode animasi</span><br>
+            &nbsp;&nbsp;<span class="function">requestAnimationFrame</span>(animate);<br>
+            }<br>
+            <span class="function">requestAnimationFrame</span>(animate);
+          </code>
+        </div>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Penjelasan Detail:</strong>
+        </p>
+        <p>
+          • <strong>Gunakan event delegation</strong> - Kurangi jumlah event listeners<br>
+          • <strong>Hindari forced synchronous layouts</strong> - Baca dan tulis DOM secara terpisah<br>
+          • <span class="highlight">Gunakan requestAnimationFrame</span> untuk animasi yang halus<br>
+          • <strong>Minimalkan repaint/reflow</strong> - Batasi perubahan style yang mahal<br>
+          • <strong>Gunakan Web Workers</strong> untuk tugas komputasi berat<br>
+          • <strong>Lazy load resources</strong> - Tingkatkan waktu muat awal<br>
+          • <strong>Monitor memory usage</strong> - Hindari memory leaks
+        </p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section-title">
+        <span>🌐</span>
+        <span>Info</span>
+      </h2>
+      
+      <div class="info-box">
+        <h4>📚 Tools Analisis Performa</h4>
+        <p>Chrome DevTools (Lighthouse, Performance tab), WebPageTest, Bundle Analyzer, Memory Profiler, dan berbagai library benchmarking.</p>
+      </div>
+      
+      <div class="explanation">
+        <p>
+          <strong>📝 Sumber Belajar Lanjutan:</strong>
+        </p>
+        <p>
+          • <strong>Google Web Fundamentals</strong> - Panduan performa dari Google<br>
+          • <strong>MDN Performance</strong> - Dokumentasi resmi Mozilla<br>
+          • <strong>Web.dev</strong> - Artikel tentang optimasi modern<br>
+          • <strong>JavaScript Performance Patterns</strong> - Buku dan tutorial<br>
+          • <strong>Benchmark.js</strong> - Library untuk pengujian performa
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
